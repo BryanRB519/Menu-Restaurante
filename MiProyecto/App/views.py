@@ -217,6 +217,61 @@ def buscar_comida(request):
     return render(request, 'App/Buscar_Comida.html', {'respuesta': respuesta})
 
 
+def buscar_adicional(request):
+
+    if request.GET.get('nombre', False):
+        nombre = request.GET['nombre']
+        adicional = Adicional.objects.filter(nombre__icontains=nombre)
+
+        return render(request, 'App/Buscar_Adicional.html', {'adicional': adicional})
+    else:
+        respuesta ='No hay datos'
+    return render(request, 'App/Buscar_Adicional.html', {'respuesta': respuesta})
+
+def buscar_guarnicion(request):
+
+    if request.GET.get('nombre', False):
+        nombre = request.GET['nombre']
+        guarnicion = Guarnicion.objects.filter(nombre__icontains=nombre)
+
+        return render(request, 'App/Buscar_Guarnicion.html', {'guarnicion': guarnicion})
+    else:
+        respuesta ='No hay datos'
+    return render(request, 'App/Buscar_Guarnicion.html', {'respuesta': respuesta})
+
+def buscar_bebida(request):
+
+    if request.GET.get('nombre', False):
+        nombre = request.GET['nombre']
+        bebida = Bebida.objects.filter(nombre__icontains=nombre)
+
+        return render(request, 'App/Buscar_Bebida.html', {'bebida': bebida})
+    else:
+        respuesta ='No hay datos'
+    return render(request, 'App/Buscar_Bebida.html', {'respuesta': respuesta})
+
+def buscar_cafete(request):
+
+    if request.GET.get('nombre', False):
+        nombre = request.GET['nombre']
+        cafete = CafeTe.objects.filter(nombre__icontains=nombre)
+
+        return render(request, 'App/Buscar_CafeTe.html', {'cafete': cafete})
+    else:
+        respuesta ='No hay datos'
+    return render(request, 'App/Buscar_CafeTe.html', {'respuesta': respuesta})
+
+def buscar_mesa(request):
+
+    if request.GET.get('id', False):
+        id = request.GET['id']
+        mesa = Mesa.objects.filter(id__icontains=id)
+
+        return render(request, 'App/Buscar_Mesa.html', {'mesa': mesa})
+    else:
+        respuesta ='No hay datos'
+    return render(request, 'App/Buscar_Mesa.html', {'respuesta': respuesta})
+
 def actualizar_comida(request,comida_id):
     comida = Comida.objects.get(id=comida_id)
     if request.method == 'POST':
@@ -410,6 +465,24 @@ def actualizar_pedido(request, pedido_id):
         })
 
     return render(request, 'App/Actualizar_Pedido.html', {'form': Crear_Pedido_forms})
+
+# Vista actualizada:
+def actualizar_mesa(request, id):
+    mesa = Mesa.objects.get(id=id)
+    if request.method == 'POST':
+        form = Crear_Mesa_forms(request.POST)
+        if form.is_valid():
+            formulario_limpio = form.cleaned_data
+            mesa.sector = formulario_limpio['sector']
+            mesa.save()
+            return render(request, 'App/index.html')
+    else:
+        form = Crear_Mesa_forms(initial={'sector': mesa.sector})
+    
+    return render(request, 'App/Actualizar_Mesa.html', {'form': Crear_Mesa_forms})
+
+
+
 
 def eliminar_mesa(request,mesa_id):
     
