@@ -272,6 +272,47 @@ def buscar_mesa(request):
         respuesta ='No hay datos'
     return render(request, 'App/Buscar_Mesa.html', {'respuesta': respuesta})
 
+
+def buscar_categoria(request):
+
+    if request.GET.get('nombre', False):
+        categoria = request.GET['nombre']
+        categoria = Categoria.objects.filter(nombre__icontains=categoria)
+
+        return render(request, 'App/Buscar_Categoria.html', {'categoria': categoria})
+    else:
+        respuesta ='No hay datos'
+    return render(request, 'App/Buscar_Categoria.html', {'respuesta': respuesta})
+
+
+def buscar_postre(request):
+
+    if request.GET.get('nombre', False):
+        postre = request.GET['nombre']
+        postre = Postre.objects.filter(nombre__icontains=postre)
+
+        return render(request, 'App/Buscar_Postre.html', {'postre': postre})
+    else:
+        respuesta ='No hay datos'
+    return render(request, 'App/Buscar_Postre.html', {'respuesta': respuesta})
+
+
+def buscar_pedido(request):
+    if request.GET.get('pedido_id', False):
+        pedido_id = request.GET['pedido_id']
+        print(f"Buscando pedido con ID: {pedido_id}")
+        pedidos = Pedido.objects.filter(id=pedido_id)
+
+        print(f"Pedidos encontrados: {list(pedidos)}")
+        return render(request, 'App/Buscar_Pedido.html', {'pedidos': pedidos})
+    else:
+        respuesta ='No hay datos'
+        return render(request, 'App/Buscar_Pedido.html', {'respuesta': respuesta})
+
+
+
+
+
 def actualizar_comida(request,comida_id):
     comida = Comida.objects.get(id=comida_id)
     if request.method == 'POST':
@@ -465,8 +506,6 @@ def actualizar_pedido(request, pedido_id):
         })
 
     return render(request, 'App/Actualizar_Pedido.html', {'form': Crear_Pedido_forms})
-
-# Vista actualizada:
 def actualizar_mesa(request, id):
     mesa = Mesa.objects.get(id=id)
     if request.method == 'POST':
