@@ -3,8 +3,11 @@ from App.models import *
 from .forms import (
     Crear_Comida_forms, Crear_Categoria_forms, Crear_Adicional_forms,
     Crear_Guarnicion_forms, Crear_Bebida_forms, Crear_Postre_forms,
-    Crear_CafeTe_forms, Crear_Mesa_forms, Crear_Pedido_forms
+    Crear_CafeTe_forms, Crear_Mesa_forms, Crear_Pedido_forms , UserRegisterForm,
 )
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.forms import AuthenticationForm
 
 def mostrar_index(request):
 
@@ -635,3 +638,45 @@ def eliminar_postre(request, postre_id):
     context = {'postre': postre}
 
     return render(request, 'App/index.html', context=context)
+
+
+def registro_usuario(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'¡Registro Exitoso! Bienvenido/a.')
+            return render(request,'App/index.html')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'App/registro.html', {'form': form})
+
+def login_request(request):
+
+    if request.method == "POST":
+            form = AuthenticationForm(request, data = request.POST)
+
+            if form.is_valid():
+                usuario = form.cleaned_data.get('username')
+                contra = form.cleaned_data.get('password')
+
+                user = authenticate(username=usuario, password=contra)
+
+                if user is not None:
+                        login(request, user)
+
+                        return render(request,"App/index.html", {"mensaje":f"Bienvenido {usuario}"})
+        
+                else:
+                        return render(request, "App/index.html", {"mensaje":"Error, datos incorrectos"})
+
+            else:
+                return render(request,"App/index.html", {"mensaje": "Error, formulario erroneo"})
+
+    form = AuthenticationForm()
+
+    return render(request, "App/login.html", {"form": form})
+
+def logout_request(request):
+    logout(request)
+    return render(request, 'App/index.html', {"mensaje":"Sesión cerrada correctamente"})
