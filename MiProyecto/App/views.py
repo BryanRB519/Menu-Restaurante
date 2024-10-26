@@ -3,7 +3,7 @@ from App.models import *
 from .forms import (
     Crear_Comida_forms, Crear_Categoria_forms, Crear_Adicional_forms,
     Crear_Guarnicion_forms, Crear_Bebida_forms, Crear_Postre_forms,
-    Crear_CafeTe_forms, Crear_Mesa_forms, Crear_Pedido_forms , UserRegisterForm,
+    Crear_CafeTe_forms, Crear_Mesa_forms, Crear_Pedido_forms ,Crear_Pedido_Cliente_Forms, UserRegisterForm,
 )
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
@@ -176,9 +176,9 @@ def crear_mesa(request):
         form = Crear_Mesa_forms(request.POST)
         if form.is_valid():
             formulario_limpio = form.cleaned_data
-            mesa = Mesa(numero_mesa=formulario_limpio['numero_mesa'])
+            mesa = Mesa(numero_mesa=formulario_limpio['numero_mesa'], sector=formulario_limpio['sector'])
             mesa.save()
-            return render(request,'App/index.html')
+            return render(request, 'App/index.html')
     else:
         form = Crear_Mesa_forms()
     return render(request, 'App/Crear_Mesa.html', {'form': Crear_Mesa_forms})
@@ -266,14 +266,15 @@ def buscar_cafete(request):
 
 def buscar_mesa(request):
 
-    if request.GET.get('id', False):
-        id = request.GET['id']
-        mesa = Mesa.objects.filter(id__icontains=id)
+    if request.GET.get('numero_mesa', False):
+        numero_mesa = request.GET['numero_mesa']
+        mesa = Mesa.objects.filter(numero_mesa__icontains=numero_mesa)
 
         return render(request, 'App/Buscar_Mesa.html', {'mesa': mesa})
     else:
         respuesta ='No hay datos'
     return render(request, 'App/Buscar_Mesa.html', {'respuesta': respuesta})
+
 
 
 def buscar_categoria(request):
@@ -680,3 +681,38 @@ def login_request(request):
 def logout_request(request):
     logout(request)
     return render(request, 'App/index.html', {"mensaje":"Sesión cerrada correctamente"})
+
+def mostrar_pedidos_cliente(request):
+
+    pedidos_cliente = Pedido_Cliente.objects.all()
+
+    context = {'pedido_cliente': pedidos_cliente}
+
+    return render(request, 'App/Pedido_Cliente.html', context)
+
+
+def crear_pedido_cliente(request):
+    if request.method == 'POST':
+        form = Crear_Pedido_Cliente_Forms(request.POST)
+        if form.is_valid():
+            formulario_limpio = form.cleaned_data
+            pedido_cliente = Pedido_Cliente(
+                mesa=formulario_limpio['mesa'],
+                plato_principal=formulario_limpio['plato_principal'],
+                adicional_plato_principal=formulario_limpio['adicional_plato_principal'],
+                guarnicion=formulario_limpio['guarnicion'],
+                adicional_guarnicion=formulario_limpio['adicional_guarnicion'],
+                bebida=formulario_limpio['bebida'],
+                adicional_bebida=formulario_limpio['adicional_bebida'],
+                postre=formulario_limpio['postre'],
+                adicional_postre=formulario_limpio['adicional_postre'],
+                cafe_te=formulario_limpio['cafe_te'],
+                adicional_cafe_te=formulario_limpio['adicional_cafe_te'],
+            )
+            pedido_cliente.save()
+            
+            return render (request,'App/index.html')
+    else:
+        form = Crear_Pedido_Cliente_Forms()
+    
+    return render(request, 'App/Crear_Pedido_Cliente.html', {'form': Crear_Pedido_Cliente_Forms})
