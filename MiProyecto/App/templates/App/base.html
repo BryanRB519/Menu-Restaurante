@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://bootswatch.com/5/vapor/bootstrap.min.css" rel="stylesheet"/>
-    <link href="{% static 'App/styles.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'App/style.css' %}">
     <title>
         {% block title %}
-
+          Home page
         {% endblock title %}
     </title>
 </head>
@@ -28,6 +28,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'Registro' %}">Registrarse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Crear Pedido Cliente' %}">Pedido Cliente</a>
               </li>
               {% if request.user.is_authenticated %}
               <li class="nav-item">
@@ -84,4 +87,3 @@
   {% endblock %}
 </body>
 </html>
-
