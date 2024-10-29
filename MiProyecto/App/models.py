@@ -68,6 +68,7 @@ class Mesa(models.Model):
     def __str__(self):
         return f'Mesa {self.numero_mesa} en {self.sector}'
 
+
 class Pedido_Cliente(models.Model):
     mesa = models.ForeignKey(Mesa, on_delete=models.CASCADE)
     plato_principal = models.ForeignKey(Comida, on_delete=models.CASCADE)
@@ -85,6 +86,27 @@ class Pedido_Cliente(models.Model):
     def __str__(self):
         return f"Pedido Cliente {self.id} - Mesa {self.mesa.numero_mesa}"
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # Guardar el Pedido_Cliente primero
+        self.crear_pedido()  # Llamar al método para crear el Pedido
+
+    def crear_pedido(self):
+        # Crear un nuevo objeto Pedido basado en Pedido_Cliente
+        pedido = Pedido(
+            mesa=self.mesa,
+            plato_principal=self.plato_principal,
+            adicional_plato_principal=self.adicional_plato_principal,
+            guarnicion=self.guarnicion,
+            adicional_guarnicion=self.adicional_guarnicion,
+            bebida=self.bebida,
+            adicional_bebida=self.adicional_bebida,
+            postre=self.postre,
+            adicional_postre=self.adicional_postre,
+            cafe_te=self.cafe_te,
+            adicional_cafe_te=self.adicional_cafe_te,
+            fecha_pedido=self.fecha_pedido
+        )
+        pedido.save()  # Guardar el nuevo Pedido
 
 class Pedido(models.Model):
     mesa = models.ForeignKey(Mesa, on_delete=models.CASCADE)
@@ -132,4 +154,3 @@ class Pedido(models.Model):
     def __str__(self):
         estado_entrega = "Entregado" if self.entregado else "No entregado"
         return f'Pedido en Mesa {self.mesa.numero_mesa} - Total: {self.total} - {estado_entrega}'
-

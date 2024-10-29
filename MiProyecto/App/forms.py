@@ -45,6 +45,7 @@ class Crear_Mesa_forms(forms.ModelForm):
         model = Mesa
         fields = ['numero_mesa','sector']
 
+
 class Crear_Pedido_forms(forms.Form):
     mesa = forms.ModelChoiceField(queryset=Mesa.objects.all())
     plato_principal = forms.ModelChoiceField(queryset=Comida.objects.all())

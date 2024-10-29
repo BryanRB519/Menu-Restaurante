@@ -265,15 +265,16 @@ def buscar_cafete(request):
     return render(request, 'App/Buscar_CafeTe.html', {'respuesta': respuesta})
 
 def buscar_mesa(request):
-
     if request.GET.get('numero_mesa', False):
         numero_mesa = request.GET['numero_mesa']
-        mesa = Mesa.objects.filter(numero_mesa__icontains=numero_mesa)
+
+        mesa = Mesa.objects.filter(numero_mesa__exact=numero_mesa)
 
         return render(request, 'App/Buscar_Mesa.html', {'mesa': mesa})
     else:
-        respuesta ='No hay datos'
+        respuesta = 'No hay datos'
     return render(request, 'App/Buscar_Mesa.html', {'respuesta': respuesta})
+
 
 
 
@@ -469,13 +470,16 @@ def actualizar_postre(request,postre_id):
 
 
 def actualizar_pedido(request, pedido_id):
+    # Obtener el pedido a actualizar
     pedido = Pedido.objects.get(id=pedido_id)
+
     if request.method == 'POST':
         form = Crear_Pedido_forms(request.POST)
 
         if form.is_valid():
             formulario_limpio = form.cleaned_data
 
+            # Actualizar los campos del pedido
             pedido.mesa = formulario_limpio['mesa']
             pedido.plato_principal = formulario_limpio['plato_principal']
             pedido.adicional_plato_principal = formulario_limpio['adicional_plato_principal']
@@ -489,11 +493,13 @@ def actualizar_pedido(request, pedido_id):
             pedido.adicional_cafe_te = formulario_limpio['adicional_cafe_te']
             pedido.entregado = formulario_limpio['entregado']
 
+            # Guardar el pedido actualizado
             pedido.save()
 
             return render(request, 'App/index.html')
 
     else:
+        # Inicializar el formulario con los datos del pedido existente
         form = Crear_Pedido_forms(initial={
             'mesa': pedido.mesa,
             'plato_principal': pedido.plato_principal,
@@ -509,7 +515,10 @@ def actualizar_pedido(request, pedido_id):
             'entregado': pedido.entregado
         })
 
-    return render(request, 'App/Actualizar_Pedido.html', {'form': Crear_Pedido_forms})
+    # Pasar el formulario inicializado al template
+    return render(request, 'App/Actualizar_Pedido.html', {'form': form})
+
+
 def actualizar_mesa(request, id):
     mesa = Mesa.objects.get(id=id)
     if request.method == 'POST':
