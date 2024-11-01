@@ -6,7 +6,10 @@
     Principal
 {% endblock title %}
 
+
+
 {% block codigoDinamico %}
+
 
 <div class="container">
 
@@ -16,5 +19,89 @@
             <p> Que nuestra comida sea de su agrado.</p>
         </div>
     <br> <br>
+
+
+    <div id="testimoniosCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <ol class="carousel-indicators">
+            <li data-target="#testimoniosCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#testimoniosCarousel" data-slide-to="1"></li>
+            <li data-target="#testimoniosCarousel" data-slide-to="2"></li>
+            <li data-target="#testimoniosCarousel" data-slide-to="3"></li>
+            <li data-target="#testimoniosCarousel" data-slide-to="4"></li>
+            <li data-target="#testimoniosCarousel" data-slide-to="5"></li>
+            <li data-target="#testimoniosCarousel" data-slide-to="6"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="col-8 mx-auto">
+                    <img src="{% static 'App/imagenes/asado.jpg' %}" class="d-block w-10" alt="Testimonio Nuestras Carnes.">
+                    <div class="carousel-caption d-block">
+                        <p>"Nuestras Carnes."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-8 mx-auto">
+                    <img src="{% static 'App/imagenes/pastas.jpg' %}" class="d-block w-10" alt="Testimonio Nuestras Pastas.">
+                    <div class="carousel-caption d-block">
+                        <p>"Nuestras Pastas."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-8 mx-auto">
+                    <img src="{% static 'App/imagenes/cafe.jpg' %}" class="d-block w-10" alt="Testimonio Nuestros Cafe.">
+                    <div class="carousel-caption d-block">
+                        <p>"Nuestros Cafe."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-8 mx-auto">
+                    <img src="{% static 'App/imagenes/flan.jpg' %}" class="d-block w-10" alt="Nuestros Flanes.">
+                    <div class="carousel-caption d-block">
+                        <p>"Nuestros Flanes."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-8 mx-auto">
+                    <img src="{% static 'App/imagenes/mousse.jpg' %}" class="d-block w-10" alt="Testimonio Nuestros Helados.">
+                    <div class="carousel-caption d-block">
+                        <p>"Nuestros helados."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-8 mx-auto">
+                    <img src="{% static 'App/imagenes/bebidas.jpg' %}" class="d-block w-10" alt="Testimonio Nuestras Bebidas.">
+                    <div class="carousel-caption d-block">
+                        <p>"Nuestras Bebidas."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-8 mx-auto">
+                    <img src="{% static 'App/imagenes/tragos.jpg' %}" class="d-block w-10" alt="Testimonio Nuestros Tragos.">
+                    <div class="carousel-caption d-block">
+                        <p>"Nuestros Tragos."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#testimoniosCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#testimoniosCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </div>
 {% endblock %}
