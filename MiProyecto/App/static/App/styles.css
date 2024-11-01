@@ -1,0 +1,38 @@
+nav {
+    background-color: #000000; /* Fondo oscuro para resaltar los colores fluorescentes */
+    padding: 10px;
+}
+
+nav a {
+    color: #39FF14; /* Cambia a otro color neón si prefieres */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FF1493; /* Cambia el color al pasar el ratón (hover) */
+}
+
+
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-container form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.banner {
+    text-align: center;
+    background: linear-gradient(90deg, #35014d 0%, #6e28b5 100%);
+    padding: 20px;
+    color: rgb(0, 204, 255);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
