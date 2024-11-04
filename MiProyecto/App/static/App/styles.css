@@ -38,12 +38,12 @@
 .carousel-caption {
     position: absolute;
     bottom: 20px; /* Espacio desde la parte inferior */
-    left: 25%; /* Espacio desde la izquierda */
-    right: 25%; /* Espacio desde la derecha */
-    color: rgb(235, 12, 12); /* Color del texto */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado */
+    color: rgb(0, 0, 0); /* Color del texto */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
-    background-color: rgba(0, 238, 255, 0.5); /* Fondo semitransparente */
-    padding: 10px; /* Espaciado interno */
+    background-color: rgba(119, 119, 119, 0.7); /* Fondo semitransparente */
+    padding: 10px 20px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
     z-index: 10;
 }
@@ -55,10 +55,60 @@
 }
 
 /* Estilo para los indicadores */
+.carousel-indicators {
+    bottom: 15px; /* Ajusta la posición de los indicadores */
+}
+
 .carousel-indicators li {
-    background-color: rgba(11, 242, 250, 0.034); /* Color de fondo semitransparente */
+    background-color: rgba(136, 138, 138, 0.5); /* Color de fondo semitransparente */
+    border-radius: 50%; /* Indicadores redondeados */
+    width: 12px; /* Ancho del indicador */
+    height: 12px; /* Alto del indicador */
 }
 
 .carousel-indicators .active {
     background-color: white; /* Color de fondo para el indicador activo */
+}
+
+.como-funciona h2 {
+    font-weight: bold;
+    color: #ffff;
+
+}
+
+.paso {
+    padding: 20px;
+    border-radius:10px;
+    transition: transform 0.3s ease;
+}
+
+.paso h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+
+}
+
+.paso p {
+    font-size: 1.1em;
+}
+
+.paso:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    border: none;
+}
+
+.bg-primary {
+    background-color: #007bff !important;
+}
+
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
 }
