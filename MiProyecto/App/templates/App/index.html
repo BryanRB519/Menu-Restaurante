@@ -15,22 +15,12 @@
 
         <div class="banner">
             <h1>Bienvenidos a French!!</h1>
-            <img src="{% static 'App/imagenes/French.jpeg' %}" alt="Imagen" class="logo">
             <p> Que nuestra comida sea de su agrado.</p>
         </div>
     <br> <br>
 
 
     <div id="testimoniosCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-        <ol class="carousel-indicators">
-            <li data-target="#testimoniosCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#testimoniosCarousel" data-slide-to="1"></li>
-            <li data-target="#testimoniosCarousel" data-slide-to="2"></li>
-            <li data-target="#testimoniosCarousel" data-slide-to="3"></li>
-            <li data-target="#testimoniosCarousel" data-slide-to="4"></li>
-            <li data-target="#testimoniosCarousel" data-slide-to="5"></li>
-            <li data-target="#testimoniosCarousel" data-slide-to="6"></li>
-        </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="col-8 mx-auto">
@@ -49,7 +39,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="col-8 mx-auto">
+                <div class="col-7 mx-auto">
                     <img src="{% static 'App/imagenes/cafe.jpg' %}" class="d-block w-10" alt="Testimonio Nuestros Cafe.">
                     <div class="carousel-caption d-block">
                         <p>"Nuestros Cafe."</p>
@@ -65,7 +55,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="col-8 mx-auto">
+                <div class="col-7 mx-auto">
                     <img src="{% static 'App/imagenes/mousse.jpg' %}" class="d-block w-10" alt="Testimonio Nuestros Helados.">
                     <div class="carousel-caption d-block">
                         <p>"Nuestros helados."</p>
@@ -97,6 +87,75 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div>
+        <div class="como-funciona mt-5">
+            <h2 class="text-center mb-4">Formas de Pago</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-lg">
+                        <div class="card-body paso bg-primary text-white rounded">
+                            <h3 class="card-title">1. Pago en Efectivo</h3>
+                            <p class="card-text">Pagando en efectivo tendras un 15% de descuento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-lg">
+                        <div class="card-body paso bg-success text-white rounded">
+                            <h3 class="card-title">2. Pago con Tajeta de debito o QR</h3>
+                            <p class="card-text">Pagando con debito o QR el precio del menu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-lg">
+                        <div class="card-body paso bg-danger text-white rounded">
+                            <h3 class="card-title">3. Pago con Tarjeta de Credito</h3>
+                            <p class="card-text">Pagando con Credito tendras un recargo del 10%.</p>
+                        </div>
+                    </di>
+                </div>
+            </div>
+        </div>
+        <br> <br> <br>
+        <div class="faq mt-5">
+            <h2>Como se usa y Preguntas Frecuentes</h2>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <div class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                ¿Cómo Creo mi Pedido"?
+                            </button>
+                        </h5>
+                    </div>
+                    
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Primero tenes que hacer click en Pedido Cliente</p>
+                            <p>llena los campos del formulario,con lo que deseas ordenar y al finalizar tu pedido, haces click en el boton crear pedido.</p>
+                            <p>Para ver tu pedido haces click en el boton Ver mi Pedido.</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <div class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿puedo modificar o eliminar mi pedido?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        No, para hacer esas acciones tenes que llamar al mozo.
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
 </div>
 
 
