@@ -1,114 +1,405 @@
+/* Contenedor del formulario */
 .form-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Mover todo a la izquierda */
     min-height: 100vh;
+    background: linear-gradient(120deg, rgba(53, 1, 77, 1), rgba(110, 40, 181, 1), rgb(119, 0, 255));
+    animation: gradient-bg 5s ease-in-out infinite, pulse-background 3s infinite alternate;
+    padding-left: 20px; /* Agregar algo de espacio a la izquierda */
 }
 
-.form-container form {
+/* Animación para el fondo */
+@keyframes gradient-bg {
+    0% {
+        background: linear-gradient(120deg, rgba(53, 1, 77, 1), rgba(110, 40, 181, 1), rgb(89, 0, 255));
+    }
+    50% {
+        background: linear-gradient(120deg, rgba(255, 0, 255, 1), rgb(62, 1, 131), rgba(53, 1, 77, 1));
+    }
+    100% {
+        background: linear-gradient(120deg, rgb(111, 0, 255), rgba(255, 0, 255, 1), rgba(110, 40, 181, 1));
+    }
+}
+
+/* Pulsación de fondo */
+@keyframes pulse-background {
+    0% {
+        box-shadow: 0 0 30px rgba(255, 0, 255, 0.6), 0 0 60px rgb(161, 2, 253);
+    }
+    50% {
+        box-shadow: 0 0 60px rgba(255, 0, 255, 0.8), 0 0 120px rgba(57, 1, 83, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 0, 255, 0.6), 0 0 60px rgba(116, 0, 151, 0.6);
+    }
+}
+
+/* Estilos para el formulario */
+.form-container .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px; /* Reducir el tamaño */
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 20px; /* Reducir el padding */
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    text-align: center;
+    animation: bounce 1s ease-in-out infinite, shadow-glow 2s ease-in-out infinite;
 }
 
+/* Animación de rebote */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Resplandor de sombra */
+@keyframes shadow-glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(0, 204, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Estilo de los campos de entrada */
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto cuando los campos están en foco */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus,
+.form-container input[type="email"]:focus {
+    border-color: rgba(0, 204, 255, 1);
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.8);
+}
+
+/* Botón de Registro */
+.form-container .button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px; /* Reducir el tamaño del texto */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    background: linear-gradient(120deg, rgba(54, 0, 153, 0.8), rgba(255, 0, 255, 0.8));
+    color: #fff;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+}
+
+/* Efecto hover del botón */
+.form-container .button:hover {
+    background: linear-gradient(120deg, rgba(255, 0, 255, 1), rgb(78, 1, 129));
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 204, 255, 0.8);
+    animation: pulse-button 1.5s infinite;
+}
+
+/* Animación de pulsación del botón */
+@keyframes pulse-button {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efecto al hacer click en el botón */
+.form-container .button:active {
+    background: linear-gradient(120deg, rgba(255, 0, 255, 1), rgb(119, 0, 255));
+    box-shadow: 0 0 50px rgba(0, 204, 255, 0.9);
+    transform: scale(0.98);
+}
+
+
+
+
+/* estilos para el Banner */
 .banner {
     text-align: center;
-    background: linear-gradient(90deg, #35014d 0%, #6e28b5 100%);
+    background: linear-gradient(90deg, rgba(53, 1, 77, 1), rgba(110, 40, 181, 1), rgba(0, 204, 255, 1));
     padding: 20px;
-    color: rgb(0, 204, 255);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    color: rgb(0, 255, 255);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    animation: text-flicker 2s infinite alternate;
 }
 
+@keyframes text-flicker {
+    0% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+    100% { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+}
 
 /* Estilos generales del carrusel */
 .carousel {
     position: relative;
     width: 100%;
-    height: 500px; /* Ajusta la altura según tus necesidades */
+    height: 500px;
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
-/* Estilo para las imágenes del carrusel */
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el área del carrusel sin distorsionarse */
+    object-fit: cover;
 }
 
-/* Estilo para las leyendas del carrusel */
+/* Leyendas del carrusel */
 .carousel-caption {
     position: absolute;
-    bottom: 20px; /* Espacio desde la parte inferior */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translateX(-50%); /* Ajusta el centrado */
-    color: rgb(0, 0, 0); /* Color del texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
-    background-color: rgba(119, 119, 119, 0.7); /* Fondo semitransparente */
-    padding: 10px 20px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px;
+    border-radius: 10px;
     z-index: 10;
 }
 
-/* Estilo para los controles del carrusel */
+/* Controles del carrusel */
 .carousel-control-prev,
 .carousel-control-next {
-    filter: invert(50%); /* Cambia el color de los iconos a blanco */
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40px; /* Tamaño reducido */
+    height: 40px; /* Tamaño reducido */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px; /* Tamaño de fuente reducido */
+    transition: transform 0.3s;
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar para que esté en el medio */
 }
 
-/* Estilo para los indicadores */
+.carousel-control-prev {
+    left: 20px; /* Ajustar posición lateral */
+}
+
+.carousel-control-next {
+    right: 20px; /* Ajustar posición lateral */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    transform: scale(1.1);
+    background-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Indicadores del carrusel */
 .carousel-indicators {
-    bottom: 15px; /* Ajusta la posición de los indicadores */
+    bottom: 10px;
 }
 
 .carousel-indicators li {
-    background-color: rgba(136, 138, 138, 0.5); /* Color de fondo semitransparente */
-    border-radius: 50%; /* Indicadores redondeados */
-    width: 12px; /* Ancho del indicador */
-    height: 12px; /* Alto del indicador */
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
 }
 
 .carousel-indicators .active {
-    background-color: white; /* Color de fondo para el indicador activo */
+    background-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
 }
 
+/* Sección 'Cómo Funciona' */
 .como-funciona h2 {
     font-weight: bold;
-    color: #ffff;
-
+    color: #ffffff;
+    animation: color-change 5s infinite;
 }
 
+@keyframes color-change {
+    0% { color: #ff0099; }
+    50% { color: #00ffcc; }
+    100% { color: #ff0099; }
+}
+
+/* Efecto en los pasos */
 .paso {
     padding: 20px;
-    border-radius:10px;
-    transition: transform 0.3s ease;
-}
-
-.paso h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-
-}
-
-.paso p {
-    font-size: 1.1em;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .paso:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #ff00ff, #00ccff, #ff0099);
+    background-size: 300% 300%;
+    animation: rgb-background 5s infinite alternate;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-nav .nav-link {
+    color: #00ffcc;
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    position: relative;
+    background: linear-gradient(90deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+    animation: link-glow 2s infinite alternate;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+@keyframes link-glow {
+    0% { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+    100% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff; }
+}
+
+/* Animación de brillo en los textos */
+.banner, .navbar-nav .nav-link {
+    animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+    from { text-shadow: 0 0 10px #ff0099, 0 0 20px #00ccff, 0 0 30px #00ccff; }
+    to { text-shadow: 0 0 20px #ff0099, 0 0 30px #00ccff, 0 0 40px #00ccff; }
+}
+
+/* Ajustes adicionales para el texto del banner */
+.banner h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff00ff;
+    text-shadow: 0px 0px 15px #ff00ff, 0px 0px 30px #00ccff;
+    animation: rainbow-text 3s infinite linear;
+}
+
+@keyframes rainbow-text {
+    0% { color: #ff00ff; }
+    25% { color: #00ffcc; }
+    50% { color: #ff0099; }
+    75% { color: #00ccff; }
+    100% { color: #ff00ff; }
+}
+
+/* Efecto RGB en las tarjetas (card) */
 .card {
-    border: none;
+    background: linear-gradient(45deg, #ff00ff, #00ccff, #ff0099);
+    background-size: 300% 300%;
+    animation: rgb-background 5s infinite alternate;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.bg-primary {
-    background-color: #007bff !important;
+@keyframes rgb-background {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-
-.bg-success {
-    background-color: #28a745 !important;
+/* Carrusel personalizado */
+.carousel1 {
+    position: relative;
+    width: 80%; /* Ajusta el ancho del carrusel */
+    margin: 20px auto; /* Centrado horizontal y margen vertical */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    animation: slide-in 1s ease-out;
 }
 
-.bg-danger {
-    background-color: #dc3545 !important;
+/* Animación de deslizamiento del carrusel */
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Testimonios */
+.testimonio {
+    text-align: center;
+    font-style: italic;
+    background-color: #0086c4; /* Color de fondo para testimonios */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin: 30px 0;
+    animation: fade-in 1.5s ease-in-out;
+}
+
+/* Animación de aparición de testimonios */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Ofertas */
+.oferta {
+    text-align: center;
+    font-weight: bold;
+    background-color: #ff00ea; /* Color de fondo para ofertas */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    margin: 30px 0;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: bounce 1s infinite alternate;
 }
