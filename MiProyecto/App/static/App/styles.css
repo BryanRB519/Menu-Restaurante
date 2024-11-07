@@ -163,84 +163,6 @@
     100% { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
 }
 
-/* Estilos generales del carrusel */
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Leyendas del carrusel */
-.carousel-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 15px 25px;
-    border-radius: 10px;
-    z-index: 10;
-}
-
-/* Controles del carrusel */
-.carousel-control-prev,
-.carousel-control-next {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 40px; /* Tamaño reducido */
-    height: 40px; /* Tamaño reducido */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 20px; /* Tamaño de fuente reducido */
-    transition: transform 0.3s;
-    top: 50%; /* Centrar verticalmente */
-    transform: translateY(-50%); /* Ajustar para que esté en el medio */
-}
-
-.carousel-control-prev {
-    left: 20px; /* Ajustar posición lateral */
-}
-
-.carousel-control-next {
-    right: 20px; /* Ajustar posición lateral */
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    transform: scale(1.1);
-    background-color: #ff00ff;
-    box-shadow: 0 0 10px #ff00ff;
-}
-
-/* Indicadores del carrusel */
-.carousel-indicators {
-    bottom: 10px;
-}
-
-.carousel-indicators li {
-    background-color: rgba(255, 255, 255, 0.6);
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-}
-
-.carousel-indicators .active {
-    background-color: #ff00ff;
-    box-shadow: 0 0 10px #ff00ff;
-}
 
 /* Sección 'Cómo Funciona' */
 .como-funciona h2 {
@@ -330,9 +252,10 @@
     100% { color: #ff00ff; }
 }
 
+
 /* Efecto RGB en las tarjetas (card) */
 .card {
-    background: linear-gradient(45deg, #ff00ff, #00ccff, #ff0099);
+    background: linear-gradient(45deg, #be0095, #5700b9, #7700e7);
     background-size: 300% 300%;
     animation: rgb-background 5s infinite alternate;
     color: #fff;
@@ -347,59 +270,206 @@
     100% { background-position: 0% 50%; }
 }
 
-/* Carrusel personalizado */
-.carousel1 {
-    position: relative;
-    width: 80%; /* Ajusta el ancho del carrusel */
-    margin: 20px auto; /* Centrado horizontal y margen vertical */
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    overflow: hidden;
-    animation: slide-in 1s ease-out;
-}
 
-/* Animación de deslizamiento del carrusel */
-@keyframes slide-in {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* Testimonios */
+/* Testimonio con animación RGB */
 .testimonio {
     text-align: center;
     font-style: italic;
-    background-color: #0086c4; /* Color de fondo para testimonios */
-    color: white; /* Color del texto */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    margin: 30px 0;
-    animation: fade-in 1.5s ease-in-out;
+    margin: 20px 0;
+    background-color: rgba(190, 0, 149, 0.1); /* #be0095 */
+    padding: 15px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    animation: fadeIn 1s ease-in-out, colorChangeTestimonio 5s infinite alternate, moveTestimonio 5s ease-in-out infinite; /* Animación para que aparezca, cambio de color y movimiento */
 }
 
-/* Animación de aparición de testimonios */
-@keyframes fade-in {
-    from {
-        opacity: 0;
+/* Movimiento de testimonio */
+@keyframes moveTestimonio {
+    0% {
+        transform: translateX(-20px); /* Comienza desplazándose desde la izquierda */
     }
-    to {
-        opacity: 1;
+    50% {
+        transform: translateX(20px); /* Se desplaza hacia la derecha */
+    }
+    100% {
+        transform: translateX(-20px); /* Vuelve a la posición inicial */
     }
 }
 
-/* Ofertas */
+.testimonio {
+    text-align: center;
+    font-style: italic;
+    margin: 20px 0;
+    background-color: rgba(190, 0, 149, 0.1); /* #be0095 */
+    padding: 15px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    animation: fadeIn 1s ease-in-out, colorChangeTestimonio 5s infinite alternate, moveTestimonio 5s ease-in-out infinite; /* Animación para que aparezca, cambio de color y movimiento */
+}
+
+/* Movimiento de testimonio */
+@keyframes moveTestimonio {
+    0% {
+        transform: translateX(-20px); /* Comienza desplazándose desde la izquierda */
+    }
+    50% {
+        transform: translateX(20px); /* Se desplaza hacia la derecha */
+    }
+    100% {
+        transform: translateX(-20px); /* Vuelve a la posición inicial */
+    }
+}
+
+/* Carrusel */
+.testimonio {
+    text-align: center;
+    font-style: italic;
+    margin: 20px 0;
+    background-color: rgba(190, 0, 149, 0.1); /* #be0095 */
+    padding: 15px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    animation: fadeIn 2s ease-in-out, colorChangeTestimonio 4s infinite alternate, moveTestimonio 8s ease-in-out infinite; /* Cambio más rápido de color y movimiento más lento */
+}
+
+/* Movimiento de testimonio */
+@keyframes moveTestimonio {
+    0% {
+        transform: translateX(-10px); /* Empieza moviéndose de forma más sutil desde la izquierda */
+    }
+    50% {
+        transform: translateX(10px); /* Movimiento hacia la derecha */
+    }
+    100% {
+        transform: translateX(-10px); /* Vuelve hacia la izquierda */
+    }
+}
+
+/*recuadro en las imagenes */
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+/* Carrusel */
+.carousel-item {
+    padding: 20px;
+    position: relative;
+    transition: transform 0.7s ease, opacity 0.7s ease; /* Suavizado de transición */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+/* Imagen del carrusel sin animación */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    transition: transform 0.5s ease; /* Suavizado de la animación de zoom */
+}
+
+/* Zoom en la imagen al hacer hover */
+.carousel-item img:hover {
+    transform: scale(1.1); /* Aumenta la imagen en un 10% */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    transform: scale(1.1);
+    background-color: #00e1ff;
+    box-shadow: 0 0 10px #00f7ff;
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+    bottom: 10px;
+}
+
+.carousel-indicators li {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+
+/* Oferta con animación en RGB */
 .oferta {
     text-align: center;
     font-weight: bold;
-    background-color: #ff00ea; /* Color de fondo para ofertas */
-    color: white; /* Color del texto */
-    padding: 20px; /* Espaciado interno */
-    margin: 30px 0;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    animation: bounce 1s infinite alternate;
+    background-color: rgb(87, 0, 185);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px; /* Bordes más suaves */
+    color: #00e1ff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    animation: colorChange 4s infinite alternate, moveOferta 8s ease-in-out infinite; /* Color más rápido y movimiento más lento */
+}
+
+/* Movimiento de oferta */
+@keyframes moveOferta {
+    0% {
+        transform: translateY(-15px); /* Movimiento más suave */
+    }
+    50% {
+        transform: translateY(15px); /* Desplazamiento hacia abajo */
+    }
+    100% {
+        transform: translateY(-15px); /* Vuelve a la posición inicial */
+    }
+}
+
+/* Cambio de color al hacer hover */
+.oferta:hover {
+    background-color: rgb(57, 0, 129); /* Color más oscuro */
+}
+
+/* Animación para cambiar el color de fondo usando RGB */
+@keyframes colorChange {
+    0% {
+        background-color: rgb(0, 248, 227);
+    }
+    50% {
+        background-color: rgb(225, 0, 255);
+    }
+    100% {
+        background-color: rgb(132, 0, 255);
+    }
+}
+
+/* Animación para cambiar el color de fondo de los testimonios */
+@keyframes colorChangeTestimonio {
+    0% {
+        background-color: rgb(0, 248, 227);
+    }
+    50% {
+        background-color: rgb(225, 0, 255);
+    }
+    100% {
+        background-color: rgb(132, 0, 255);
+    }
+}
+
+/* Animación de desvanecimiento para testimonio */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
