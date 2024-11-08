@@ -145,20 +145,6 @@
     transform: scale(0.98);
 }
 
-/* Estilos para celulares */	
-@media (max-width: 768px) {
-    .banner h1 {
-        font-size: 1.8em;
-    }
-    .navbar-nav .nav-link {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-    .form-container .container {
-        max-width: 100%;
-        padding: 15px;
-    }
-}
 
 
 
@@ -178,32 +164,23 @@
 }
 
 
-/* Sección 'Cómo Funciona' */
-.como-funciona h2 {
+/* Ajustes adicionales para el texto del banner */
+.banner h1 {
+    font-size: 2.5em;
     font-weight: bold;
-    color: #ffffff;
-    animation: color-change 5s infinite;
+    color: #ff00ff;
+    text-shadow: 0px 0px 15px #ff00ff, 0px 0px 30px #00ccff;
+    animation: rainbow-text 3s infinite linear;
 }
 
-@keyframes color-change {
-    0% { color: #ff0099; }
-    50% { color: #00ffcc; }
-    100% { color: #ff0099; }
+@keyframes rainbow-text {
+    0% { color: #ff00ff; }
+    25% { color: #00ffcc; }
+    50% { color: #ff0099; }
+    75% { color: #00ccff; }
+    100% { color: #ff00ff; }
 }
 
-/* Efecto en los pasos */
-.paso {
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.paso:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
 
 /* NAVBAR */
 .navbar {
@@ -249,21 +226,32 @@
     to { text-shadow: 0 0 20px #ff0099, 0 0 30px #00ccff, 0 0 40px #00ccff; }
 }
 
-/* Ajustes adicionales para el texto del banner */
-.banner h1 {
-    font-size: 2.5em;
+
+/* Sección 'Cómo Funciona' */
+.como-funciona h2 {
     font-weight: bold;
-    color: #ff00ff;
-    text-shadow: 0px 0px 15px #ff00ff, 0px 0px 30px #00ccff;
-    animation: rainbow-text 3s infinite linear;
+    color: #ffffff;
+    animation: color-change 5s infinite;
 }
 
-@keyframes rainbow-text {
-    0% { color: #ff00ff; }
-    25% { color: #00ffcc; }
-    50% { color: #ff0099; }
-    75% { color: #00ccff; }
-    100% { color: #ff00ff; }
+@keyframes color-change {
+    0% { color: #ff0099; }
+    50% { color: #00ffcc; }
+    100% { color: #ff0099; }
+}
+
+/* Efecto en los pasos */
+.paso {
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.paso:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 
@@ -277,20 +265,6 @@
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
-
-
-.bg-primary {
-    background-color: #4c00ff !important;
-}
-
-.bg-success {
-    background-color: #00ff4cb6 !important;
-}
-
-.bg-danger {
-    background-color: #ff00ea !important;
-}
-
 
 @keyframes rgb-background {
     0% { background-position: 0% 50%; }
@@ -410,7 +384,17 @@
     transform: scale(1.1); /* Aumenta la imagen en un 10% */
 }
 
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    transform: scale(1.1);
+    background-color: #00e1ff;
+    box-shadow: 0 0 10px #00f7ff;
+}
 
+/* Indicadores del carrusel */
+.carousel-indicators {
+    bottom: 10px;
+}
 
 .carousel-indicators li {
     background-color: rgba(255, 255, 255, 0.6);
@@ -419,6 +403,10 @@
     border-radius: 50%;
 }
 
+.carousel-indicators .active {
+    background-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
 
 
 /* Oferta con animación en RGB */
@@ -486,4 +474,33 @@
     100% {
         opacity: 1;
     }
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer h5 {
+    font-size: 16px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0
+}
+
+footer ul li {
+    margin-bottom: 16px;
+}
+
+footer ul li a {
+    color: white;
+    text-emphasis: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
 }
