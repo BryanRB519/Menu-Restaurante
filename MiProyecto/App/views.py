@@ -569,9 +569,9 @@ def eliminar_bebida(request,bebida_id):
 
     bebida.delete()
 
-    bebida = bebida.objects.all()
+    bebidas = bebidas.objects.all()
 
-    context = {'bebida': bebida}
+    context = {'bebida': bebidas}
 
     return render(request, 'App/index.html' ,context=context)
 
@@ -725,3 +725,10 @@ def crear_pedido_cliente(request):
         form = Crear_Pedido_Cliente_Forms()
     
     return render(request, 'App/Crear_Pedido_Cliente.html', {'form': Crear_Pedido_Cliente_Forms})
+
+
+def politica_privacidad(request):
+    return render(request, 'App/Politica_Privacidad.html')
+
+def terminos_condiciones(request):
+    return render(request, 'App/Terminos_Condiciones.html')

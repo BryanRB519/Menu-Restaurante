@@ -54,6 +54,8 @@ urlpatterns = [
     path('registro/', views.registro_usuario,name='Registro'),
     path('login/', views.login_request, name= 'login'),
     path('logout/', views.logout_request,name='logout'),
+    path('politica_privacidad/', views.politica_privacidad, name= 'Politica Privacidad'),
+    path('terminos_condiciones/', views.terminos_condiciones, name= 'Terminos Condiciones'),
 
 
 ]
