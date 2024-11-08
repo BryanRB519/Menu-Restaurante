@@ -145,6 +145,20 @@
     transform: scale(0.98);
 }
 
+/* Estilos para celulares */	
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 1.8em;
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    .form-container .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
 
 
 
@@ -264,6 +278,20 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
+
+.bg-primary {
+    background-color: #4c00ff !important;
+}
+
+.bg-success {
+    background-color: #00ff4cb6 !important;
+}
+
+.bg-danger {
+    background-color: #ff00ea !important;
+}
+
+
 @keyframes rgb-background {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -382,17 +410,7 @@
     transform: scale(1.1); /* Aumenta la imagen en un 10% */
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    transform: scale(1.1);
-    background-color: #00e1ff;
-    box-shadow: 0 0 10px #00f7ff;
-}
 
-/* Indicadores del carrusel */
-.carousel-indicators {
-    bottom: 10px;
-}
 
 .carousel-indicators li {
     background-color: rgba(255, 255, 255, 0.6);
@@ -401,10 +419,6 @@
     border-radius: 50%;
 }
 
-.carousel-indicators .active {
-    background-color: #ff00ff;
-    box-shadow: 0 0 10px #ff00ff;
-}
 
 
 /* Oferta con animación en RGB */
