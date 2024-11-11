@@ -241,31 +241,63 @@
             </div>
     </div>
 
+
+    <div class="contacto mt-5">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>Dejanos tu opinion</h3>
+    
+                <form action="{% url 'Contacto'%}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
     <!-- pie de pagina -->
 
     <footer class="mt-5">
-        <div class="row">
-            <div class="col-md-4">
-                <h2>FRENCH</h5>
-                <P>Contacto para reserva</P>
-                <p>Teléfono: (11) 1234-5678</p>
-                <p>Dirección: Calle falsa 1234</p>
-                <p>Email: french.restaurante@gmail.com</p>
-                <p>Horarios: Martes a Domingo 10:00 HS - 24:00 HS</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>FRENCH</h5>
+                    <p>Contacto para reserva</p>
+                    <p><span class="icon icon-whatsapp"><i class="fab fa-whatsapp"></i></span> Teléfono: (11) 1234-5678</p> <!-- Icono de WhatsApp -->
+                    <p><span class="icon icon-ubicacion"><i class="fas fa-map-marker-alt"></i></span> Dirección: Calle falsa 1234</p> <!-- Icono de GPS -->
+                    <p><span class="icon icon-email"><i class="fas fa-envelope"></i></span> Email: french.restaurante@gmail.com</p> <!-- Icono de correo -->
+                    <p>Horarios: Martes a Domingo 10:00 HS - 24:00 HS</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <div class="footer-links">
+                        <a href="/Politica Privacidad" class="footer-link">Política de privacidad</a>
+                        <a href="/Terminos Condiciones" class="footer-link">Términos y condiciones</a>
+                    </div>
+                    <p>&copy; <span id="currentYear"></span>  French Restaurante. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <ul class="social-icons">
+                        <li><a href="#" class="icon icon-facebook"><i class="fab fa-facebook-f"></i></a></li> <!-- Icono de Facebook -->
+                        <li><a href="#" class="icon icon-instagram"><i class="fab fa-instagram"></i></a></li> <!-- Icono de Instagram -->
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h2>Enlaces Rapidos</h2>
-                <ul>
-                    <li><a href="{% url 'Politica Privacidad' %}">Politica de privacidad</a></li>
-                    <li><a href="{% url 'Terminos Condiciones' %}">Terminos y condiciones</a></li>
-                    <p>&copy; <span id="currentYear"></span> French Restaurante. todos los derechos reservados.</p>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h2>Redes Sociales</h2>
-                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-            </div>
+        </div>
     </footer>
 
 
