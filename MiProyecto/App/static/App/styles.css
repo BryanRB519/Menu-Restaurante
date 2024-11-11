@@ -6,7 +6,7 @@
     align-items: flex-start; /* Mover todo a la izquierda */
     min-height: 100vh;
     background: linear-gradient(120deg, rgba(53, 1, 77, 1), rgba(110, 40, 181, 1), rgb(119, 0, 255));
-    animation: gradient-bg 5s ease-in-out infinite, pulse-background 3s infinite alternate;
+    animation: gradient-bg 10s ease-in-out infinite, pulse-background 6s infinite alternate;
     padding-left: 20px; /* Agregar algo de espacio a la izquierda */
 }
 
@@ -39,15 +39,15 @@
 /* Estilos para el formulario */
 .form-container .container {
     width: 100%;
-    max-width: 350px; /* Reducir el tamaño */
+    max-width: 350px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
-    padding: 20px; /* Reducir el padding */
+    padding: 20px;
     backdrop-filter: blur(15px);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
     text-align: center;
-    animation: bounce 1s ease-in-out infinite, shadow-glow 2s ease-in-out infinite;
+    animation: bounce 2s ease-in-out infinite, shadow-glow 4s ease-in-out infinite;
 }
 
 /* Animación de rebote */
@@ -76,75 +76,43 @@
     }
 }
 
-/* Estilo de los campos de entrada */
-.form-container input[type="text"],
-.form-container input[type="password"],
-.form-container input[type="email"] {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-/* Efecto cuando los campos están en foco */
-.form-container input[type="text"]:focus,
-.form-container input[type="password"]:focus,
-.form-container input[type="email"]:focus {
-    border-color: rgba(0, 204, 255, 1);
-    box-shadow: 0 0 10px rgba(0, 204, 255, 0.8);
-}
-
-/* Botón de Registro */
-.form-container .button {
+/* Botón mágico */
+.form-container .magic-button {
     width: 100%;
     padding: 15px;
     border: none;
     border-radius: 50px;
-    font-size: 18px; /* Reducir el tamaño del texto */
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-    background: linear-gradient(120deg, rgba(54, 0, 153, 0.8), rgba(255, 0, 255, 0.8));
     color: #fff;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    background: linear-gradient(120deg, #ff00ff, #6600ff, #00ffff);
+    background-size: 200% 200%;
+    transition: all 0.4s ease;
+    animation: magic-glow 3s ease-in-out infinite, color-shift 8s ease infinite;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
     text-transform: uppercase;
+    text-align: center;
 }
 
-/* Efecto hover del botón */
-.form-container .button:hover {
-    background: linear-gradient(120deg, rgba(255, 0, 255, 1), rgb(78, 1, 129));
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(0, 204, 255, 0.8);
-    animation: pulse-button 1.5s infinite;
-}
-
-/* Animación de pulsación del botón */
-@keyframes pulse-button {
+/* Efecto de desplazamiento del color de fondo */
+@keyframes color-shift {
     0% {
-        transform: scale(1);
+        background-position: 0% 50%;
     }
     50% {
-        transform: scale(1.1);
+        background-position: 100% 50%;
     }
     100% {
-        transform: scale(1);
+        background-position: 0% 50%;
     }
 }
 
-/* Efecto al hacer click en el botón */
-.form-container .button:active {
-    background: linear-gradient(120deg, rgba(255, 0, 255, 1), rgb(119, 0, 255));
-    box-shadow: 0 0 50px rgba(0, 204, 255, 0.9);
-    transform: scale(0.98);
+/* Efecto hover del botón mágico */
+.form-container .magic-button:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.8), 0 0 100px rgba(0, 255, 255, 1);
 }
-
 
 
 
@@ -153,24 +121,18 @@
     text-align: center;
     background: linear-gradient(90deg, rgba(53, 1, 77, 1), rgba(110, 40, 181, 1), rgba(0, 204, 255, 1));
     padding: 20px;
-    color: rgb(0, 255, 255);
+    color: rgb(255, 255, 255);
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    animation: text-flicker 2s infinite alternate;
+    animation: pulse 1.5s infinite alternate, background-animation 10s infinite alternate;
 }
-
-@keyframes text-flicker {
-    0% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
-    100% { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
-}
-
 
 /* Ajustes adicionales para el texto del banner */
 .banner h1 {
-    font-size: 2.5em;
+    font-size: 3.5em; /* Aumentamos el tamaño para mayor impacto */
     font-weight: bold;
-    color: #ff00ff;
-    text-shadow: 0px 0px 15px #ff00ff, 0px 0px 30px #00ccff;
-    animation: rainbow-text 3s infinite linear;
+    color: #d106d1;
+    text-shadow: 0px 0px 15px #b105b1, 0px 0px 30px #5e03b3, 0px 0px 45px #ff00ff; /* Añadimos más sombras para un efecto de brillo */
+    animation: rainbow-text 4s infinite linear, sparkle 1.5s infinite alternate, float 3s infinite alternate;
 }
 
 @keyframes rainbow-text {
@@ -181,90 +143,100 @@
     100% { color: #ff00ff; }
 }
 
-
-/* NAVBAR */
-.navbar {
-    background: linear-gradient(90deg, #ff00ff, #00ccff, #ff0099);
-    background-size: 300% 300%;
-    animation: rgb-background 5s infinite alternate;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+@keyframes sparkle {
+    0% { text-shadow: 0px 0px 15px #b105b1, 0px 0px 30px #5e03b3, 0px 0px 45px #ff00ff; }
+    50% { text-shadow: 0px 0px 25px #0004fc, 0px 0px 50px #02a574, 0px 0px 70px #ff0000; }
+    100% { text-shadow: 0px 0px 15px #b105b1, 0px 0px 30px #5e03b3, 0px 0px 45px #ff00ff; }
 }
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Nueva animación de fondo */
+@keyframes background-animation {
+    0% { background: linear-gradient(90deg, rgba(53, 1, 77, 1), rgba(110, 40, 181, 1), rgba(0, 204, 255, 1)); }
+    50% { background: linear-gradient(90deg, rgba(0, 204, 255, 1), rgba(110, 40, 181, 1), rgba(53, 1, 77, 1)); }
+    100% { background: linear-gradient(90deg, rgba(53, 1, 77, 1), rgba(110, 40, 181, 1), rgba(0, 204, 255, 1)); }
+}
+
+/* Efecto de flotación para el texto */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Navbar principal con efecto de fondo animado */
+.navbar {
+    background: linear-gradient(90deg, #5f00f8, #710088, #f10091, #4c00ff, #ff00ff);
+    background-size: 400% 400%;
+    animation: rgb-background 8s infinite alternate;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Animación de fondo que se desplaza suavemente */
+@keyframes rgb-background {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Enlaces en la navbar con estilo mágico */
 .navbar-nav .nav-link {
-    color: #00ffcc;
-    font-size: 16px;
+    color: #fdfdfd;
+    font-size: 1em;
     margin: 0 10px;
-    padding: 10px 20px;
-    border-radius: 30px;
+    padding: 8px 15px;
+    border-radius: 20px;
     font-weight: bold;
     position: relative;
-    background: linear-gradient(90deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
-    animation: link-glow 2s infinite alternate;
+    background: linear-gradient(90deg, rgba(255, 0, 255, 0.3), rgba(0, 255, 255, 0.3));
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5), 0px 0px 20px rgba(255, 0, 255, 0.4);
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
+/* Efecto de brillo en el enlace al hacer hover */
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    transition: all 0.3s ease;
+    transform: skewX(-20deg);
+    z-index: -1;
+}
+
+/* Movimiento de brillo al hacer hover */
+.navbar-nav .nav-link:hover::before {
+    left: 100%;
+    transition: all 0.5s ease;
+}
+
+/* Cambio de color y sombra al hacer hover */
 .navbar-nav .nav-link:hover {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6), 0px 0px 25px rgba(255, 0, 255, 0.7);
 }
 
-@keyframes link-glow {
-    0% { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
-    100% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff; }
-}
-
-/* Animación de brillo en los textos */
-.banner, .navbar-nav .nav-link {
-    animation: text-glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes text-glow {
-    from { text-shadow: 0 0 10px #ff0099, 0 0 20px #00ccff, 0 0 30px #00ccff; }
-    to { text-shadow: 0 0 20px #ff0099, 0 0 30px #00ccff, 0 0 40px #00ccff; }
+/* Efecto de hover en la navbar completa */
+.navbar:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 25px rgba(0, 255, 255, 0.7), 0px 5px 20px rgba(255, 0, 255, 0.5);
 }
 
 
-/* Sección 'Cómo Funciona' */
-.como-funciona h2 {
-    font-weight: bold;
-    color: #ffffff;
-    animation: color-change 5s infinite;
-}
-
-@keyframes color-change {
-    0% { color: #ff0099; }
-    50% { color: #00ffcc; }
-    100% { color: #ff0099; }
-}
-
-/* Efecto en los pasos */
-.paso {
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.paso:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
-
-
-/* Efecto RGB en las tarjetas (card) */
-.card {
-    background: linear-gradient(45deg, #be0095, #5700b9, #7700e7);
-    background-size: 300% 300%;
-    animation: rgb-background 5s infinite alternate;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
 
 @keyframes rgb-background {
     0% { background-position: 0% 50%; }
@@ -298,54 +270,6 @@
     }
 }
 
-.testimonio {
-    text-align: center;
-    font-style: italic;
-    margin: 20px 0;
-    background-color: rgba(190, 0, 149, 0.1); /* #be0095 */
-    padding: 15px;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    animation: fadeIn 1s ease-in-out, colorChangeTestimonio 5s infinite alternate, moveTestimonio 5s ease-in-out infinite; /* Animación para que aparezca, cambio de color y movimiento */
-}
-
-/* Movimiento de testimonio */
-@keyframes moveTestimonio {
-    0% {
-        transform: translateX(-20px); /* Comienza desplazándose desde la izquierda */
-    }
-    50% {
-        transform: translateX(20px); /* Se desplaza hacia la derecha */
-    }
-    100% {
-        transform: translateX(-20px); /* Vuelve a la posición inicial */
-    }
-}
-
-/* Carrusel */
-.testimonio {
-    text-align: center;
-    font-style: italic;
-    margin: 20px 0;
-    background-color: rgba(190, 0, 149, 0.1); /* #be0095 */
-    padding: 15px;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
-    animation: fadeIn 2s ease-in-out, colorChangeTestimonio 4s infinite alternate, moveTestimonio 8s ease-in-out infinite; /* Cambio más rápido de color y movimiento más lento */
-}
-
-/* Movimiento de testimonio */
-@keyframes moveTestimonio {
-    0% {
-        transform: translateX(-10px); /* Empieza moviéndose de forma más sutil desde la izquierda */
-    }
-    50% {
-        transform: translateX(10px); /* Movimiento hacia la derecha */
-    }
-    100% {
-        transform: translateX(-10px); /* Vuelve hacia la izquierda */
-    }
-}
 
 /*recuadro en las imagenes */
 .carousel-caption {
@@ -361,89 +285,16 @@
     z-index: 10;
 }
 
-/* Carrusel */
-.carousel-item {
-    padding: 20px;
-    position: relative;
-    transition: transform 0.7s ease, opacity 0.7s ease; /* Suavizado de transición */
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
-}
-
-/* Imagen del carrusel sin animación */
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
-    transition: transform 0.5s ease; /* Suavizado de la animación de zoom */
-}
 
 /* Zoom en la imagen al hacer hover */
 .carousel-item img:hover {
     transform: scale(1.1); /* Aumenta la imagen en un 10% */
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    transform: scale(1.1);
-    background-color: #00e1ff;
-    box-shadow: 0 0 10px #00f7ff;
-}
-
-/* Indicadores del carrusel */
-.carousel-indicators {
-    bottom: 10px;
-}
-
-.carousel-indicators li {
-    background-color: rgba(255, 255, 255, 0.6);
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-}
-
-.carousel-indicators .active {
-    background-color: #ff00ff;
-    box-shadow: 0 0 10px #ff00ff;
-}
-
-
-/* Oferta con animación en RGB */
-.oferta {
-    text-align: center;
-    font-weight: bold;
-    background-color: rgb(87, 0, 185);
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px; /* Bordes más suaves */
-    color: #00e1ff;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-    animation: colorChange 4s infinite alternate, moveOferta 8s ease-in-out infinite; /* Color más rápido y movimiento más lento */
-}
-
-/* Movimiento de oferta */
-@keyframes moveOferta {
-    0% {
-        transform: translateY(-15px); /* Movimiento más suave */
-    }
-    50% {
-        transform: translateY(15px); /* Desplazamiento hacia abajo */
-    }
-    100% {
-        transform: translateY(-15px); /* Vuelve a la posición inicial */
-    }
-}
-
-/* Cambio de color al hacer hover */
-.oferta:hover {
-    background-color: rgb(57, 0, 129); /* Color más oscuro */
-}
-
 /* Animación para cambiar el color de fondo usando RGB */
 @keyframes colorChange {
     0% {
-        background-color: rgb(0, 248, 227);
+        background-color: rgb(0, 58, 248);
     }
     50% {
         background-color: rgb(225, 0, 255);
@@ -476,31 +327,520 @@
     }
 }
 
+/* Efecto RGB en las tarjetas (card) */
+.card {
+    background: linear-gradient(45deg, #be0095, #5700b9, #7700e7);
+    background-size: 300% 300%;
+    animation: rgb-background 5s infinite alternate;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
 
+/* Efecto en los pasos */
+.paso {
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.paso:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+
+
+/* Oferta con animación en RGB */
+.oferta {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(87, 0, 185);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px; /* Bordes más suaves */
+    color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    animation: colorChange 4s infinite alternate, moveOferta 8s ease-in-out infinite; /* Color más rápido y movimiento más lento */
+}
+
+/* Movimiento de oferta */
+@keyframes moveOferta {
+    0% {
+        transform: translateY(-15px); /* Movimiento más suave */
+    }
+    50% {
+        transform: translateY(15px); /* Desplazamiento hacia abajo */
+    }
+    100% {
+        transform: translateY(-15px); /* Vuelve a la posición inicial */
+    }
+}
+
+
+/* Estilo general del footer */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
+    background: rgba(43, 4, 100, 0.9);
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    position: relative;
+    border-top: 3px solid transparent;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 0 auto;
+    border: 3px solid transparent;
+    background-image: linear-gradient(rgb(4, 29, 100), rgb(97, 0, 177)),
+                    radial-gradient(circle, rgba(255, 0, 255, 0.8), rgba(0, 255, 255, 0.8));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: rgbGlow 1.5s infinite alternate;
 }
 
+/* Título del footer */
 footer h5 {
-    font-size: 16px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: bounceIn 2s ease-out;
+    text-align: center; /* Centrado del título */
 }
 
+/* Centrar las columnas */
+footer .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* Enlaces en el footer */
 footer ul {
-    list-style-type: none;
-    padding: 0
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-flex; /* Centrar los elementos */
+    gap: 20px;
 }
 
 footer ul li {
-    margin-bottom: 16px;
+    display: inline-block;
+    margin: 0 15px;
 }
 
 footer ul li a {
-    color: white;
-    text-emphasis: none;
+    color: #fff;
+    font-size: 1.1em;
+    text-decoration: none;
+    padding: 5px;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
 }
 
 footer ul li a:hover {
-    text-decoration: underline;
+    color: #f0f0f0;
+    border-bottom: 2px solid #f0f0f0;
+    transform: scale(1.05);
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
 }
+
+/* Texto adicional en el footer */
+footer .footer-text {
+    font-size: 1.2em;
+    margin-top: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    animation: fadeIn 2s ease-in-out;
+    opacity: 0.8;
+}
+
+/* Enlaces adicionales en el footer */
+
+
+footer .footer-link {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.1em; /* Tamaño de fuente ligeramente mayor */
+    margin: 10px 20px; /* Espaciado ajustado */
+    text-decoration: none;
+    padding: 10px 15px; /* Aumento en el padding */
+    border-radius: 25px; /* Bordes más redondeados */
+    background-color: rgba(0, 119, 255, 0.1); /* Fondo sutil para los enlaces */
+    transition: all 0.3s ease;
+}
+
+footer .footer-link:hover {
+    background-color: rgb(0, 238, 255); /* Fondo más claro al pasar el mouse */
+    color: #0074e9; /* Color del texto al pasar el mouse */
+    transform: scale(1.1); /* Aumento más notable */
+    box-shadow: 0px 8px 20px rgba(30, 255, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Efecto RGB Glow para el contorno */
+@keyframes rgbGlow {
+    0% {
+        border-color: rgba(255, 0, 255, 1);
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.75);
+    }
+    25% {
+        border-color: rgba(0, 255, 255, 1);
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.75);
+    }
+    50% {
+        border-color: rgba(0, 255, 0, 1);
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.75);
+    }
+    75% {
+        border-color: rgba(255, 255, 0, 1);
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.75);
+    }
+    100% {
+        border-color: rgba(255, 0, 255, 1);
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.75);
+    }
+}
+
+
+/* Estilo base para los íconos */
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    border: 2px solid transparent;
+    animation: rgbGlow 3s infinite alternate;
+    transition: transform 0.3s ease;
+}
+
+
+/* Colores específicos para cada red social */
+.icon-whatsapp {
+    background-color: #25D366;
+}
+
+.icon-email {
+    background-color: #BB001B;
+}
+
+.icon-ubicacion {
+    background-color: #FF5722;
+}
+
+.icon-facebook {
+    background-color: #3B5998;
+}
+
+.icon-instagram {
+    background: radial-gradient(circle at 30% 30%, #feda77, #d62976, #4f5bd5);
+}
+
+
+/* Estilo base para ambas tablas */
+.table {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(80, 24, 126, 0.8), rgba(18, 10, 43, 0.8));
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.table:hover {
+    transform: scale(1.02); /* Efecto de zoom suave */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Cabecera de la tabla con un gradiente futurista */
+.table th {
+    background: linear-gradient(45deg, #6c00ff, #ff00d4); /* Violeta y rosa neón */
+    color: white;
+    font-size: 0.95rem; /* Tamaño de fuente reducido */
+    text-align: center;
+    padding: 12px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo para las celdas de la tabla */
+.table td {
+    background: rgba(35, 17, 48, 0.85);
+    color: #ddd;
+    padding: 12px; /* Reducido */
+    text-align: center;
+    font-size: 0.9rem; /* Tamaño de fuente reducido */
+    border: 1px solid #5f1e91;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.table td:hover {
+    background-color: rgba(103, 56, 145, 0.8); /* Morado suave */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Estilo para filas alternas */
+.table tbody tr:nth-child(odd) {
+    background: rgba(40, 25, 80, 0.85); /* Violeta oscuro */
+}
+
+.table tbody tr:nth-child(even) {
+    background: rgba(50, 32, 85, 0.85); /* Otro tono oscuro de violeta */
+}
+
+/* Efecto hover en las filas */
+.table tbody tr:hover {
+    background: rgba(103, 56, 145, 0.9); /* Violeta intenso */
+    cursor: pointer;
+    transform: translateY(-4px); /* Efecto de elevación */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Cabecera de la tabla secundaria (segunda tabla) */
+.table-secondary {
+    background: linear-gradient(135deg, #ff004d, #ff0080); /* Rosa y violeta brillante */
+    color: white;
+    font-size: 0.9rem; /* Tamaño de fuente reducido */
+    padding: 12px; /* Reducido */
+    text-align: center;
+    border-radius: 12px;
+    text-transform: capitalize;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Personalización del borde de la tabla */
+.table {
+    border: 2px solid rgba(103, 56, 145, 0.8); /* Borde neón */
+}
+
+/* Efecto de transición suave para las celdas */
+.table td {
+    transition: background-color 0.4s ease, transform 0.2s ease;
+}
+
+/* Celdas con texto 'N/A' */
+.table td.NA {
+    color: #bbb;
+    font-style: italic;
+    background-color: rgba(50, 32, 85, 0.7);
+}
+
+/* Agregar bordes redondeados en la tabla */
+.table, .table td, .table th {
+    border-radius: 16px;
+}
+
+/* Efectos adicionales al pasar el mouse sobre celdas */
+.table td:hover {
+    background-color: rgba(103, 56, 145, 0.9);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo para las filas al pasar el mouse */
+.table tbody tr:hover {
+    background: rgba(100, 55, 150, 0.9); /* Violeta oscuro */
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Añadir brillo a la cabecera de la tabla */
+.table th:hover {
+    background: linear-gradient(45deg, #ff4f5a, #ff57a3);
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.6);
+}
+
+
+/* Estilos generales para los botones */
+.btn {
+    font-size: 0.9rem; /* Tamaño más pequeño para los botones */
+    padding: 8px 16px; /* Relleno más pequeño para botones compactos */
+    border-radius: 25px; /* Bordes redondeados, con un tamaño más marcado */
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    background: transparent;
+    position: relative; /* Para los efectos de luz */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra ligera para el efecto de profundidad */
+}
+
+/* Botón "Nuevo Pedido" */
+.btn-outline-success {
+    background: linear-gradient(45deg, #28a745, #218838); /* Verde brillante */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    color: white;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); /* Sombra suave */
+}
+
+.btn-outline-success::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(40, 167, 69, 0.2); /* Efecto de luz de neón */
+    z-index: -1;
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn-outline-success:hover {
+    background: linear-gradient(45deg, #34d058, #17b300); /* Verde claro */
+    box-shadow: 0 5px 20px rgba(40, 167, 69, 0.5); /* Aumento de sombra */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+.btn-outline-success:hover::before {
+    opacity: 1; /* Efecto de luz activa */
+}
+
+/* Botón "Buscar Pedido" */
+.btn-outline-light {
+    background: linear-gradient(45deg, #f8f9fa, #e2e6ea); /* Gris claro */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    color: #333;
+}
+
+.btn-outline-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(248, 249, 250, 0.3); /* Efecto de luz suave */
+    z-index: -1;
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn-outline-light:hover {
+    background: linear-gradient(45deg, #ffffff, #d6d8db); /* Blanco a gris */
+    color: #495057;
+    box-shadow: 0 5px 20px rgba(248, 249, 250, 0.5); /* Aumento de sombra */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+.btn-outline-light:hover::before {
+    opacity: 1; /* Efecto de luz activa */
+}
+
+/* Botón "Actualizar Pedido" */
+.btn-outline-info {
+    background: linear-gradient(45deg, #17a2b8, #117a8b); /* Azul brillante */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    color: white;
+    box-shadow: 0 4px 10px rgba(23, 162, 184, 0.3); /* Sombra suave */
+}
+
+.btn-outline-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(23, 162, 184, 0.2); /* Efecto de luz de neón */
+    z-index: -1;
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn-outline-info:hover {
+    background: linear-gradient(45deg, #20c997, #1e7e8c); /* Verde claro */
+    box-shadow: 0 5px 20px rgba(23, 162, 184, 0.5); /* Aumento de sombra */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+.btn-outline-info:hover::before {
+    opacity: 1; /* Efecto de luz activa */
+}
+
+/* Botón "Eliminar Pedido" */
+.btn-outline-danger {
+    background: linear-gradient(45deg, #dc3545, #b02a37); /* Rojo brillante */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    color: white;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3); /* Sombra suave */
+}
+
+.btn-outline-danger::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(220, 53, 69, 0.2); /* Efecto de luz de neón */
+    z-index: -1;
+    border-radius: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn-outline-danger:hover {
+    background: linear-gradient(45deg, #e74c3c, #c0392b); /* Rojo oscuro */
+    box-shadow: 0 5px 20px rgba(220, 53, 69, 0.5); /* Aumento de sombra */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+.btn-outline-danger:hover::before {
+    opacity: 1; /* Efecto de luz activa */
+}
+
+/* Estilo de los enlaces dentro de los botones */
+.btn a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo de los botones al pasar el mouse */
+/* Efecto de elevación y sombra al pasar el mouse */
+.btn:hover {
+    transform: translateY(-3px); /* Efecto de elevación */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+}
+
+
