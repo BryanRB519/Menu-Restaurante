@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from App.models import *
 from .forms import (
     Crear_Comida_forms, Crear_Categoria_forms, Crear_Adicional_forms,
@@ -8,6 +8,10 @@ from .forms import (
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib import admin
+from django.core.paginator import Paginator
 
 def mostrar_index(request):
 
@@ -732,3 +736,56 @@ def politica_privacidad(request):
 
 def terminos_condiciones(request):
     return render(request, 'App/Terminos_Condiciones.html')
+
+
+from django.core.mail import send_mail
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from .models import MensajeContacto
+from django.conf import settings
+
+def contacto(request):
+    if request.method == 'POST':
+        nombre = request.POST.get('name')  # Cambiado de 'nombre' a 'name'
+        email = request.POST.get('email')
+        mensaje = request.POST.get('mensaje')
+
+        if nombre and email and mensaje:
+            try:
+                MensajeContacto.objects.create(
+                    nombre=nombre,
+                    email=email,
+                    mensaje=mensaje
+                )
+
+                send_mail(
+                    'Gracias por contactarnos',
+                    f'Hola {nombre}, hemos recibido tu mensaje y te contactaremos pronto',
+                    settings.DEFAULT_FROM_EMAIL,
+                    [email]
+                )
+
+                messages.success(request, 'Mensaje enviado exitosamente.')
+                return redirect('pagina_de_gracias')
+            except Exception as e:
+                messages.error(request, f'Error al enviar el mensaje: {str(e)}')
+        else:
+            messages.error(request, 'Por favor, llena todos los campos.')
+
+    return render(request, 'App/Contacto.html')
+def pagina_de_gracias(request):
+    return render(request, 'App/Gracias.html')
+
+@admin.register(MensajeContacto)
+
+class MensajeContactoAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'email','fecha_envio')
+    search_fields = ('nombre', 'email')
+
+def listar_mensajes(request):
+    mensajes = MensajeContacto.objects.all().order_by('-fecha_envio')
+    paginator = Paginator(mensajes, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'App/Listar_Mensajes.html', {'page_obj': page_obj})

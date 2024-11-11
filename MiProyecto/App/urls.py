@@ -56,6 +56,9 @@ urlpatterns = [
     path('logout/', views.logout_request,name='logout'),
     path('politica_privacidad/', views.politica_privacidad, name= 'Politica Privacidad'),
     path('terminos_condiciones/', views.terminos_condiciones, name= 'Terminos Condiciones'),
+    path('contacto/',views.contacto,name='Contacto'),
+    path('gracias/',views.pagina_de_gracias,name='pagina_de_gracias'),
+    path('mensajes/', views.listar_mensajes,name='Listar Mensajes'),
 
 
 ]

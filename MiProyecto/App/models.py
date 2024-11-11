@@ -154,3 +154,12 @@ class Pedido(models.Model):
     def __str__(self):
         estado_entrega = "Entregado" if self.entregado else "No entregado"
         return f'Pedido en Mesa {self.mesa.numero_mesa} - Total: {self.total} - {estado_entrega}'
+
+class MensajeContacto(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    mensaje = models.TextField()
+    fecha_envio = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f'Mensaje de { self.nombre} - {self.email}'
