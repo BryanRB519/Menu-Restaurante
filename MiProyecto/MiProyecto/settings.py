@@ -84,12 +84,13 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': '@Cfl4062024Abd',
+        'PASSWORD': '@BryanRB519.',
         'NAME': 'menu',
-        'OPTIONS': {
+        'OPTIONS':{
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        }
+
     }
-}
 }
 
 
@@ -133,3 +134,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # Solo esta línea
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'french.restaurante@gmail.com'
+EMAIL_HOST_PASSWORD = 'tumgkyknovionzfq'  # Asegúrate de que esto sea correcto y seguro
+DEFAULT_FROM_EMAIL = 'french.restaurante@gmail.com'
+CONTACT_EMAIL = 'french.restaurante@gmail.com'
+
