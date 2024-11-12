@@ -5,6 +5,15 @@ from .forms import (
     Crear_Guarnicion_forms, Crear_Bebida_forms, Crear_Postre_forms,
     Crear_CafeTe_forms, Crear_Mesa_forms, Crear_Pedido_forms ,Crear_Pedido_Cliente_Forms, UserRegisterForm,
 )
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from django.core.mail import EmailMessage, send_mail
+from django.conf import settings
+from django.contrib import admin
+from django.core.paginator import Paginator
+from django.template.loader import render_to_string
+
 
 def mostrar_index(request):
 
@@ -467,7 +476,7 @@ def actualizar_postre(request,postre_id):
 
 
 def actualizar_pedido(request, pedido_id):
-    # Obtener el pedido a actualizar
+
     pedido = Pedido.objects.get(id=pedido_id)
 
     if request.method == 'POST':
@@ -476,7 +485,6 @@ def actualizar_pedido(request, pedido_id):
         if form.is_valid():
             formulario_limpio = form.cleaned_data
 
-            # Actualizar los campos del pedido
             pedido.mesa = formulario_limpio['mesa']
             pedido.plato_principal = formulario_limpio['plato_principal']
             pedido.adicional_plato_principal = formulario_limpio['adicional_plato_principal']
@@ -490,7 +498,6 @@ def actualizar_pedido(request, pedido_id):
             pedido.adicional_cafe_te = formulario_limpio['adicional_cafe_te']
             pedido.entregado = formulario_limpio['entregado']
 
-            # Guardar el pedido actualizado
             pedido.save()
 
             return render(request, 'App/index.html')
@@ -512,7 +519,7 @@ def actualizar_pedido(request, pedido_id):
             'entregado': pedido.entregado
         })
 
-    # Pasar el formulario inicializado al template
+
     return render(request, 'App/Actualizar_Pedido.html', {'form': form})
 
 
@@ -566,9 +573,9 @@ def eliminar_bebida(request,bebida_id):
 
     bebida.delete()
 
-    bebidas = bebidas.objects.all()
+    bebida = bebida.objects.all()
 
-    context = {'bebida': bebidas}
+    context = {'bebida': bebida}
 
     return render(request, 'App/index.html' ,context=context)
 
@@ -731,48 +738,62 @@ def terminos_condiciones(request):
     return render(request, 'App/Terminos_Condiciones.html')
 
 
-from django.core.mail import send_mail
-from django.contrib import messages
-from django.shortcuts import render, redirect
-from .models import MensajeContacto
-from django.conf import settings
-
 def contacto(request):
     if request.method == 'POST':
-        nombre = request.POST.get('name')  # Cambiado de 'nombre' a 'name'
+        nombre = request.POST.get('nombre')
         email = request.POST.get('email')
         mensaje = request.POST.get('mensaje')
+        asunto = request.POST.get('asunto')
 
         if nombre and email and mensaje:
+            template = render_to_string('App/Email-Template.html', {
+                'nombre': nombre,
+                'email': email,
+                'mensaje': mensaje,
+                'asunto': asunto
+            })
+            emailsender = EmailMessage(
+                asunto,
+                template,
+                settings.EMAIL_HOST_USER,
+                to=['french.restaurante@gmail.com'],
+            )
+            emailsender.content_subtype = 'html'
+            emailsender.fail_silently = False
+
             try:
+                emailsender.send()
                 MensajeContacto.objects.create(
                     nombre=nombre,
                     email=email,
-                    mensaje=mensaje
+                    mensaje=mensaje,
                 )
-
                 send_mail(
-                    'Gracias por contactarnos',
-                    f'Hola {nombre}, hemos recibido tu mensaje y te contactaremos pronto',
+                    'Gracias Por tu Opinión',
+                    f'Hola {nombre}, hemos recibido tu mensaje y te contactaremos pronto.',
                     settings.DEFAULT_FROM_EMAIL,
                     [email]
                 )
-
                 messages.success(request, 'Mensaje enviado exitosamente.')
                 return redirect('pagina_de_gracias')
             except Exception as e:
                 messages.error(request, f'Error al enviar el mensaje: {str(e)}')
+                return render(request, 'App/Contacto.html')
+
         else:
-            messages.error(request, 'Por favor, llena todos los campos.')
+            messages.error(request, 'Por favor, llene todos los campos.')
 
     return render(request, 'App/Contacto.html')
+
+def pagina_de_gracias(request):
+    return render(request, 'App/Gracias.html')
+
 def pagina_de_gracias(request):
     return render(request, 'App/Gracias.html')
 
 @admin.register(MensajeContacto)
-
 class MensajeContactoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'email','fecha_envio')
+    list_display = ('nombre', 'email', 'fecha_envio')
     search_fields = ('nombre', 'email')
 
 def listar_mensajes(request):
@@ -782,3 +803,4 @@ def listar_mensajes(request):
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'App/Listar_Mensajes.html', {'page_obj': page_obj})
+
