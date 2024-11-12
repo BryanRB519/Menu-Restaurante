@@ -12,14 +12,14 @@
 <div class="login-page">
     <div class="form-container">
         <div class="container text-center">
-            <h2>Registro de Usuario</h2>
+            <h1>Registro de Usuario</h1> <!-- Cambié h2 a h1 para mantener la jerarquía -->
         </div>
         <form method="post" class="container">
             {% csrf_token %}
             <div class="form-group">
                 {{ form|crispy }}
             </div>
-            <button type="submit" class="button">Registrar</button>
+            <button type="submit" class="magic-button">Registrar</button>
         </form>
         <br><br><br>
         <div class="container text-center">
