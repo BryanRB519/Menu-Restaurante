@@ -241,27 +241,37 @@
             </div>
     </div>
 
-
+        <!-- Mensajes -->
     <div class="contacto mt-5">
         <div class="row mt-4">
             <div class="col-md-12">
-                <h3>Dejanos tu opinion</h3>
+                <h3>Déjanos tu opinión</h3>
     
-                <form action="{% url 'Contacto'%}" method="post">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-info">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+    
+                <form action="{% url 'Contacto' %}" method="post">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="name" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" class="form-control" id="asunto" name="asunto" required>
+                    </div>
+                    <div class="form-group">
                         <label for="mensaje">Mensaje</label>
                         <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    </button>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
@@ -292,8 +302,8 @@
                 <div class="col-md-4">
                     <h5>Redes Sociales</h5>
                     <ul class="social-icons">
-                        <li><a href="#" class="icon icon-facebook"><i class="fab fa-facebook-f"></i></a></li> <!-- Icono de Facebook -->
-                        <li><a href="#" class="icon icon-instagram"><i class="fab fa-instagram"></i></a></li> <!-- Icono de Instagram -->
+                        <li><a href="https://web.facebook.com/profile.php?id=61568414618286" class="icon icon-facebook"><i class="fab fa-facebook-f"></i></a></li> <!-- Icono de Facebook -->
+                        <li><a href="https://www.instagram.com/french_restaurant2024/?igsh=MXZrN3RrNGZjNjZ0Mw%3D%3D" class="icon icon-instagram"><i class="fab fa-instagram"></i></a></li> <!-- Icono de Instagram -->
                     </ul>
                 </div>
             </div>
