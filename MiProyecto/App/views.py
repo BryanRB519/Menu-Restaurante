@@ -5,13 +5,6 @@ from .forms import (
     Crear_Guarnicion_forms, Crear_Bebida_forms, Crear_Postre_forms,
     Crear_CafeTe_forms, Crear_Mesa_forms, Crear_Pedido_forms ,Crear_Pedido_Cliente_Forms, UserRegisterForm,
 )
-from django.contrib import messages
-from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import AuthenticationForm
-from django.core.mail import send_mail
-from django.conf import settings
-from django.contrib import admin
-from django.core.paginator import Paginator
 
 def mostrar_index(request):
 
