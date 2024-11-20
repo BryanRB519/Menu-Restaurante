@@ -18,7 +18,6 @@ urlpatterns = [
     path('crear_categoria/', views.crear_categoria, name='Crear Categoria'),
     path('crear_adicional/', views.crear_adicional, name='Crear Adicional'),
     path('crear_guarnicion/', views.crear_guarnicion, name='Crear Guarnicion'),
-    path('crear_bebida/', views.crear_bebida, name='Crear Bebida'),
     path('crear_postre/', views.crear_postre, name='Crear Postre'),
     path('crear_cafete/', views.crear_cafete, name='Crear CafeTe'),
     path('crear_mesa/', views.crear_mesa, name='Crear Mesa'),
@@ -54,11 +53,12 @@ urlpatterns = [
     path('registro/', views.registro_usuario,name='Registro'),
     path('login/', views.login_request, name= 'login'),
     path('logout/', views.logout_request,name='logout'),
-    path('politica_privacidad/', views.politica_privacidad, name= 'Politica Privacidad'),
-    path('terminos_condiciones/', views.terminos_condiciones, name= 'Terminos Condiciones'),
+    path('politica_privacidad/', views.politica_privacidad, name='Politica Privacidad'),
+    path('terminos_condiciones/', views.terminos_condiciones, name='Terminos Condiciones'),
     path('contacto/',views.contacto,name='Contacto'),
     path('gracias/',views.pagina_de_gracias,name='pagina_de_gracias'),
     path('mensajes/', views.listar_mensajes,name='Listar Mensajes'),
+    path('about/', views.mostrar_about, name='About'),
 
 
 ]

@@ -14,7 +14,6 @@ from django.contrib import admin
 from django.core.paginator import Paginator
 from django.template.loader import render_to_string
 
-
 def mostrar_index(request):
 
 
@@ -100,7 +99,7 @@ def crear_comida(request):
             comida = Comida(nombre=formulario_limpio['nombre'], descripcion=formulario_limpio['descripcion'], 
                             precio=formulario_limpio['precio'], categoria=formulario_limpio['categoria'])
             comida.save()
-            return render (request,'App/index.html')
+            return redirect('Comida')
     else:
         form = Crear_Comida_forms()
     return render(request, 'App/Crear_Comida.html', {'form': Crear_Comida_forms})
@@ -112,7 +111,7 @@ def crear_categoria(request):
             formulario_limpio = form.cleaned_data
             categoria = Categoria(nombre=formulario_limpio['nombre'])
             categoria.save()
-            return render(request,'App/index.html')
+            return redirect('Categoria')
     else:
         form = Crear_Categoria_forms()
     return render(request, 'App/Crear_Categoria.html', {'form': Crear_Categoria_forms})
@@ -124,7 +123,7 @@ def crear_adicional(request):
             formulario_limpio = form.cleaned_data
             adicional = Adicional(nombre=formulario_limpio['nombre'], precio=formulario_limpio['precio'])
             adicional.save()
-            return render(request,'App/index.html')
+            return redirect('Adicional')
     else:
         form = Crear_Adicional_forms()
     return render(request, 'App/Crear_Adicional.html', {'form': Crear_Adicional_forms})
@@ -136,7 +135,7 @@ def crear_guarnicion(request):
             formulario_limpio = form.cleaned_data
             guarnicion = Guarnicion(nombre=formulario_limpio['nombre'], precio=formulario_limpio['precio'])
             guarnicion.save()
-            return render(request,'App/index.html')
+            return redirect('Guarnicion')
     else:
         form = Crear_Guarnicion_forms()
     return render(request, 'App/Crear_Guarnicion.html', {'form': Crear_Guarnicion_forms})
@@ -148,7 +147,7 @@ def crear_bebida(request):
             formulario_limpio = form.cleaned_data
             bebida = Bebida(nombre=formulario_limpio['nombre'], precio=formulario_limpio['precio'])
             bebida.save()
-            return render(request,'App/index.html')
+            return redirect('Bebidas')
     else:
         form = Crear_Bebida_forms()
     return render(request, 'App/Crear_Bebida.html', {'form': Crear_Bebida_forms})
@@ -160,7 +159,7 @@ def crear_postre(request):
             formulario_limpio = form.cleaned_data
             postre = Postre(nombre=formulario_limpio['nombre'], precio=formulario_limpio['precio'])
             postre.save()
-            return render(request,'App/index.html')
+            return redirect('Postre')
     else:
         form = Crear_Postre_forms()
     return render(request, 'App/Crear_Postre.html', {'form': Crear_Postre_forms})
@@ -172,7 +171,7 @@ def crear_cafete(request):
             formulario_limpio = form.cleaned_data
             cafete = CafeTe(nombre=formulario_limpio['nombre'], precio=formulario_limpio['precio'])
             cafete.save()
-            return render(request,'App/index.html')
+            return redirect('Cafete')
     else:
         form = Crear_CafeTe_forms()
     return render(request, 'App/Crear_Cafete.html', {'form': Crear_CafeTe_forms})
@@ -184,7 +183,7 @@ def crear_mesa(request):
             formulario_limpio = form.cleaned_data
             mesa = Mesa(numero_mesa=formulario_limpio['numero_mesa'], sector=formulario_limpio['sector'])
             mesa.save()
-            return render(request, 'App/index.html')
+            return redirect('mesa')
     else:
         form = Crear_Mesa_forms()
     return render(request, 'App/Crear_Mesa.html', {'form': Crear_Mesa_forms})
@@ -209,7 +208,7 @@ def crear_pedido(request):
                 entregado=formulario_limpio['entregado']
             )
             pedido.save()
-            return render(request,'App/index.html')
+            return redirect('Pedido')
     else:
         form = Crear_Pedido_forms()
     return render(request, 'App/Crear_Pedido.html', {'form': Crear_Pedido_forms})
@@ -339,7 +338,7 @@ def actualizar_comida(request,comida_id):
 
             comida.save()
 
-            return render(request, 'App/index.html')
+            return redirect('Comida')
 
     else:
         form = Crear_Comida_forms(initial={'nombre': comida.nombre, 'nombre': comida.nombre})
@@ -361,7 +360,7 @@ def actualizar_bebida(request,bebida_id):
 
             bebida.save()
             
-            return render(request, 'App/index.html')
+            return redirect('bebida')
         
     else:
         form = Crear_Bebida_forms(initial={'nombre': bebida.nombre, 'precio': bebida.precio})
@@ -382,7 +381,7 @@ def actualizar_categoria(request,categoria_id):
 
             categoria.save()
             
-            return render(request, 'App/index.html')
+            return redirect('Categoria')
         
     else:
         form = Crear_Categoria_forms(initial={'nombre': categoria.nombre})
@@ -403,7 +402,7 @@ def actualizar_guarnicion(request,guarnicion_id):
 
             guarnicion.save()
             
-            return render(request, 'App/index.html')
+            return redirect('Guarnicion')
         
     else:
         form = Crear_Guarnicion_forms(initial={'nombre': guarnicion.nombre, 'precio': guarnicion.precio})
@@ -424,7 +423,7 @@ def actualizar_adicional(request,adicional_id):
 
             adicional.save()
             
-            return render(request, 'App/index.html')
+            return redirect('Adicional')
         
     else:
         form = Crear_Adicional_forms(initial={'nombre': adicional.nombre, 'precio': adicional.precio})
@@ -445,7 +444,7 @@ def actualizar_cafete(request,cafete_id):
 
             cafete.save()
             
-            return render(request, 'App/index.html')
+            return redirect('Cafete')
         
     else:
         form = Crear_CafeTe_forms(initial={'nombre': cafete.nombre, 'precio': cafete.precio})
@@ -467,7 +466,7 @@ def actualizar_postre(request,postre_id):
 
             postre.save()
             
-            return render(request, 'App/index.html')
+            return redirect('Postre')
         
     else:
         form = Crear_Postre_forms(initial={'nombre': postre.nombre, 'precio': postre.precio})
@@ -476,9 +475,7 @@ def actualizar_postre(request,postre_id):
 
 
 def actualizar_pedido(request, pedido_id):
-
     pedido = Pedido.objects.get(id=pedido_id)
-
     if request.method == 'POST':
         form = Crear_Pedido_forms(request.POST)
 
@@ -500,7 +497,7 @@ def actualizar_pedido(request, pedido_id):
 
             pedido.save()
 
-            return render(request, 'App/index.html')
+            return redirect('Pedido')
 
     else:
         # Inicializar el formulario con los datos del pedido existente
@@ -529,11 +526,12 @@ def actualizar_mesa(request, id):
         form = Crear_Mesa_forms(request.POST)
         if form.is_valid():
             formulario_limpio = form.cleaned_data
+            mesa.numero_mesa = formulario_limpio['numero_mesa']
             mesa.sector = formulario_limpio['sector']
             mesa.save()
-            return render(request, 'App/index.html')
+            return redirect('Mesa')
     else:
-        form = Crear_Mesa_forms(initial={'sector': mesa.sector})
+        form = Crear_Mesa_forms(initial={'sector': mesa.sector, 'numero_mesa': mesa.numero_mesa})
     
     return render(request, 'App/Actualizar_Mesa.html', {'form': Crear_Mesa_forms})
 
@@ -546,11 +544,7 @@ def eliminar_mesa(request,mesa_id):
 
     mesa.delete()
 
-    mesa = mesa.objects.all()
-
-    context = {'mesa': mesa}
-
-    return render(request, 'App/index.html' ,context=context)
+    return redirect('Mesa')
 
 
 
@@ -560,11 +554,7 @@ def eliminar_comida(request,comida_id):
 
     comida.delete()
 
-    comida = comida.objects.all()
-
-    context = {'comida': comida}
-
-    return render(request, 'App/index.html' ,context=context)
+    return redirect('Comida')
 
 
 def eliminar_bebida(request,bebida_id):
@@ -573,72 +563,49 @@ def eliminar_bebida(request,bebida_id):
 
     bebida.delete()
 
-    bebida = bebida.objects.all()
+    return redirect('Bebidas')
 
-    context = {'bebida': bebida}
 
-    return render(request, 'App/index.html' ,context=context)
-
-def eliminar_categoria(request, categoria_id):
+def eliminar_categoria(request,categoria_id):
 
     categoria = Categoria.objects.get(id=categoria_id)
 
     categoria.delete()
 
-    categorias = Categoria.objects.all()
+    return redirect('Categoria')
 
-    context = {'categorias': categorias}
-
-    return render(request, 'App/index.html', context=context)
-
-def eliminar_pedido(request, pedido_id):
+def eliminar_pedido(request,pedido_id):
 
     pedido = Pedido.objects.get(id=pedido_id)
 
     pedido.delete()
 
-    pedido = pedido.objects.all()
+    return redirect('Pedido')
 
-    context = {'pedido': pedido}
-
-    return render(request, 'App/index.html', context=context)
-
-def eliminar_guarnicion(request, guarnicion_id):
+def eliminar_guarnicion(request,guarnicion_id):
 
     guarnicion = Guarnicion.objects.get(id=guarnicion_id)
 
     guarnicion.delete()
 
-    guarnicion = guarnicion.objects.all()
+    return redirect('Guarnicion')
 
-    context = {'guarnicion': guarnicion}
-
-    return render(request, 'App/index.html', context=context)
-
-def eliminar_adicional(request, adicional_id):
+def eliminar_adicional(request,adicional_id):
 
     adicional= Adicional.objects.get(id=adicional_id)
 
     adicional.delete()
 
-    adicional= adicional.objects.all()
-
-    context = {'adicional': adicional}
-
-    return render(request, 'App/index.html', context=context)
+    return redirect('Adicional')
 
 
-def eliminar_cafete(request, cafete_id):
+def eliminar_cafete(request,cafete_id):
 
     cafete= CafeTe.objects.get(id=cafete_id)
 
     cafete.delete()
 
-    cafete= cafete.objects.all()
-
-    context = {'cafete': cafete}
-
-    return render(request, 'App/index.html', context=context)
+    return redirect('CafeTe')
 
 
 def eliminar_postre(request, postre_id):
@@ -649,9 +616,7 @@ def eliminar_postre(request, postre_id):
 
     postre= postre.objects.all()
 
-    context = {'postre': postre}
-
-    return render(request, 'App/index.html', context=context)
+    return redirect('Postre')
 
 
 def registro_usuario(request):
@@ -804,3 +769,5 @@ def listar_mensajes(request):
 
     return render(request, 'App/Listar_Mensajes.html', {'page_obj': page_obj})
 
+def mostrar_about(request):
+    return render(request, 'App/About.html')
