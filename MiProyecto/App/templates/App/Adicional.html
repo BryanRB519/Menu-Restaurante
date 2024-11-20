@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block codigoDinamico %}
-<div class="container">
+<div class="container"transition-style="in:wipe:up">
     <h1> Adicional </h1> <br> <br> <br>
 {% for adicional in adicional %}
-    <div class="container">
+    <div class="container"transition-style="in:wipe:up">
         <table class="table table-hover text-center">
             <tbody>
                 <th scope="col">ID</th>
@@ -26,7 +26,7 @@
             <button type="button" class="btn btn-outline-success">
                 <a href="{% url 'Crear Adicional' %}">Nuevo Adicional</a>
             </button> &nbsp; &nbsp; &nbsp;
-            <button type="button" class="btn btn-outline-light">
+            <button type="button" class="btn btn-outline-primary">
                 <a  href="{% url 'Buscar Adicional' %}">Buscar Adicional</a>
             </button> &nbsp; &nbsp;&nbsp;
             <button type="button" class="btn btn-outline-info">

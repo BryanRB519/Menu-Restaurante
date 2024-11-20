@@ -7,10 +7,10 @@
 {% endblock  %}
 
 {% block codigoDinamico %}
-<div class="container">
+<div class="container"transition-style="in:wipe:up">
     <h1> Cafe/Te </h1> <br> <br> <br>
 {% for cafete in cafete %}
-    <div class="container">
+    <div class="container"transition-style="in:wipe:up">
         <table class="table table-hover text-center">
             <tbody>
                 <th scope="col">ID</th>
@@ -27,7 +27,7 @@
         <button type="button" class="btn btn-outline-success">
             <a href="{% url 'Crear CafeTe' %}">Nueva Cafe/Te</a>
         </button> &nbsp; &nbsp;&nbsp;
-        <button type="button" class="btn btn-outline-light">
+        <button type="button" class="btn btn-outline-primary">
             <a href="{% url 'Buscar CafeTe' %}">Buscar CafeTe</a>
         </button> &nbsp; &nbsp;&nbsp;
         <button type="button" class="btn btn-outline-info">
