@@ -1,6 +1,11 @@
 # Proyecto Final Menu Restaurante
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_Este Proyecto Final realizado por Dalma, Bryan y Walter, es una aplicacion Web para ser utilizada como Menu de Restaurante para hacer pedidos por parte del cliente y usuarios registrados
+Se desarrrollo y programo en Python utilizando Django como Framework. 
+Esta App web tiene diferentes  perfiles como admin, usuario con registro (Login)  y usuario sin Registro
+Consta de Barras de Navegacion, Carrousel de imagenes, carrousel de opiniones y ofertas, Cards de Formas de pago, Cuadro colapsable de Como se usa y FAQ, un mapa de Google para Encuentranos, Formularios para Opiniones, un Pie de Pagina con informaciones y Links varios.
+La barra de navegacion superior consta de diferentes botones para seleccionar las diferentes opciones del Menu en los cuales se puede hacer CRUD (Create, Read, Update y Delete)
+Tambien gracias a Django se programo con HTML5 Y CSS3 que, combinado con las plantillas de Bootswatch y BooBootstrap nos facilitaron el diseño FrontEnd de este proyecto, para darle un aspecto mas user friendly._
 
 ## Comenzando 🚀
 
