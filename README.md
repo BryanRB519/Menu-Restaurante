@@ -9,17 +9,17 @@ Tambien gracias a Django se programo con HTML5 Y CSS3 que, combinado con las pla
 
 Como Base de Datos se utilizo MySQL debido a que no tiene limites como SQL y posee mayor nivel de seguridad_
 
-## Comenzando 🚀
+# Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
 PONER LINK DE GIT CLONE """"""""""""""""
 
-###  Descarga de instalación ZIP
+#  Descarga de instalación ZIP
 
 _Ir aL boton  “code” > download ZIP Descomprimir el archivo y luego elegir en que carpeta de tu equipo lo instalas y luego se abre con VS CODE_
 
-#### Pre-requisitos 📋
+# Pre-requisitos 📋
 
 _Que cosas necesitas para instalar el software y como instalarlas_
 
@@ -29,7 +29,7 @@ _Deberas tener instalado para correr este proyecto:
 Visual Studio Code, Python 3.12 o superior, Django 5.1.2, MySQL Workbench 8.0_
 
 
-##### Instalación 🔧
+# Instalación 🔧
 
 _Se instala en primer instancia VS Code, descargandola de https://code.visualstudio.com/download se elige el sistema operativo que usas Windows, Mac o Linux se descarga y se siguen los pasos que nos indica hasta terminar la instalacion.
 
