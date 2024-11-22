@@ -5,38 +5,60 @@ Se desarrrollo y programo en Python utilizando Django como Framework.
 Esta App web tiene diferentes  perfiles como admin, usuario con registro (Login)  y usuario sin Registro
 Consta de Barras de Navegacion, Carrousel de imagenes, carrousel de opiniones y ofertas, Cards de Formas de pago, Cuadro colapsable de Como se usa y FAQ, un mapa de Google para Encuentranos, Formularios para Opiniones, un Pie de Pagina con informaciones y Links varios.
 La barra de navegacion superior consta de diferentes botones para seleccionar las diferentes opciones del Menu en los cuales se puede hacer CRUD (Create, Read, Update y Delete)
-Tambien gracias a Django se programo con HTML5 Y CSS3 que, combinado con las plantillas de Bootswatch y BooBootstrap nos facilitaron el diseño FrontEnd de este proyecto, para darle un aspecto mas user friendly._
+Tambien gracias a Django se programo con HTML5 Y CSS3 que, combinado con las plantillas de Bootswatch y BooBootstrap nos facilitaron el diseño FrontEnd de este proyecto, para darle un aspecto mas user friendly.
+
+Como Base de Datos se utilizo MySQL debido a que no tiene limites como SQL y posee mayor nivel de seguridad_
 
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+PONER LINK DE GIT CLONE """"""""""""""""
 
+###  Descarga de instalación ZIP
 
-### Pre-requisitos 📋
+_Ir aL boton  “code” > download ZIP Descomprimir el archivo y luego elegir en que carpeta de tu equipo lo instalas y luego se abre con VS CODE_
+
+#### Pre-requisitos 📋
 
 _Que cosas necesitas para instalar el software y como instalarlas_
 
-```
-Da un ejemplo
-```
 
-### Instalación 🔧
+_Deberas tener instalado para correr este proyecto:
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+Visual Studio Code, Python 3.12 o superior, Django 5.1.2, MySQL Workbench 8.0_
 
-_Dí cómo será ese paso_
 
-```
-Da un ejemplo
-```
+##### Instalación 🔧
 
-_Y repite_
+_Se instala en primer instancia VS Code, descargandola de https://code.visualstudio.com/download se elige el sistema operativo que usas Windows, Mac o Linux se descarga y se siguen los pasos que nos indica hasta terminar la instalacion.
 
-```
-hasta finalizar
-```
+Luego se instala Python , descargando de https://www.python.org/,  en la primer pantalla selecionar la caja de path sera de utilidad para este proyecto y luego seguir con la instalacion del mismo.
+
+Se instala MySQL descargandolo de https://www.mysql.com/products/workbench/ siguendo los pasos hasta finalizar la instalacion_
+
+
+######Comandos usados en la consola de VS CODE para hacer funcionar el proyecto
+
+_python -m venv entorno (creamos el entorno virtual llamado "entorno")
+
+.\entorno\Scripts\activate (activación del entorno virtual)
+
+django-admin startproject MiProyecto (crea el proyecto)
+
+cd .\MiProyecto\ (nos posiciona en la carpeta del proyecto)
+
+python manage.py startapp MiApp (crea la app dentro de MiProyecto)
+
+python manage.py makemigrations (hace los cambios en la base de datos y los modelos)
+
+python manage.py migrate (Guarda los cambios de los modelos)
+
+python manage.py runserver (activa el sitio web en localhost)
+
+Con Ctrl+C se detiene la App
+
+deactivate (desactiva el entorno)_
 
 _Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
