@@ -102,11 +102,12 @@ En admin.py se conectan los Models con el Administrador de Django
 ![image](https://github.com/user-attachments/assets/d5195e76-6e5a-477b-862b-772320d74ff3)
 
 
-
-
 El view.html se importan varias funciones y modulos de Django pero principalmente se importan los Models y las funciones render y redirect para que rendericen los HTML y muestren la pagina
 
 Tambien principalmente se definen las funciones "def" (mostrar,crear,buscar,actualizar y eliminar) necesarias para el CRUD de todas las "clases" generadas en el archivo models.py y se retornan renderizando a cada archivo html de cada uno de los Objetos
+
+![image](https://github.com/user-attachments/assets/7f978d9a-f946-4d68-9d1d-f93b3ea583f3)
+
 
 
 ![image](https://github.com/user-attachments/assets/e60901d2-aaf6-495f-93aa-f771d139ae78)
