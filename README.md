@@ -86,21 +86,7 @@ Carpeta Templates/App
    
    Se definen varias Clases cuyos atributos y metodos se utilizan para configurar diferentes partes y contenedores de la App Web como ser:
    
-   El Banner
-   
-   Carrousel de las imagenes que estan en la carpeta Static/App/imagenes
-   
-   Carrousel de Testimonios y Promociones
-   
-   Cards de Formas de pago
-   
-   Seccion de Como se usa y FAQ con textos colapsables
-   
-   Link de Google Maps con ubicacion
-   
-   Seccion de Formulario para Mensajes y Opinion viculado con path en url.py
-   
-   Seccion de Pie de pagina (Footer) con datos varios y link con RRSS
+   El Banner /    Carrousel de las imagenes que estan en la carpeta Static/App/imagenes /   Carrousel de Testimonios y Promociones /     Cards de Formas de pago  /  Seccion de Como se usa y FAQ con textos colapsables  /     Link de Google Maps con ubicacion  /   Seccion de Formulario para Mensajes y Opinion viculado con path en url.py  /     Seccion de Pie de pagina (Footer) con datos varios y link con RRSS
        
 
 ![image](https://github.com/user-attachments/assets/71b42346-78fa-4ef0-ba9f-40659f9d2ea0)
