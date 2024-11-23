@@ -84,8 +84,7 @@ Carpeta Templates/App
    Link de Google Maps con ubicacion
    Seccion de Formulario para Mensajes y Opinion viculado con path en url.py
    Seccion de Pie de pagina (Footer) con datos varios y link con RRSS
-        
-    
+       
 
 ![image](https://github.com/user-attachments/assets/71b42346-78fa-4ef0-ba9f-40659f9d2ea0)
 
