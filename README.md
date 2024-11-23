@@ -3,7 +3,9 @@
 Este Proyecto Final realizado por Dalma, Bryan y Walter, es una aplicacion Web para ser utilizada como Menu de Restaurante para hacer pedidos por parte del cliente y usuarios registrados
 Se desarrrollo y programo en Python utilizando Django como Framework. 
 Esta App web tiene diferentes  perfiles como admin, usuario con registro (Login)  y usuario sin Registro
+
 Consta de Barras de Navegacion, Carrousel de imagenes, carrousel de opiniones y ofertas, Cards de Formas de pago, Cuadro colapsable de Como se usa y FAQ, un mapa de Google para Encuentranos, Formularios para Opiniones que se encuentra conectado con una cuenta de Gmail del Restaurante que envia un mail de confirmacion al cliente que su opinion fue registrada, un Pie de Pagina con informaciones y Links varios.
+
 La barra de navegacion superior consta de diferentes botones para seleccionar las diferentes opciones del Menu en los cuales se puede hacer CRUD (Create, Read, Update y Delete)
 Tambien gracias a Django se programo con HTML5 Y CSS3 que, combinado con las plantillas de Bootswatch y BooBootstrap nos facilitaron el diseño FrontEnd de este proyecto, para darle un aspecto mas user friendly.
 
@@ -75,18 +77,29 @@ Carpeta Templates/App
    Aqui se encuentran los archivos html donde se definen las Clases que representan los Objetos con sus Propiedades, Argumentos e Instancias que componen la App
    Los html mas importantes son el Base y el Index 
 
-   _El Base posee la Barra de Navegacion principal, el vinculo con el archivo style.css mencionado antes, la configuracion basica de diseño obtenido en bootswatch, la imagen del icono de la ventana (favicon), varias Clases donde se vincula los Botones de la barra principal (navbar) con las URLs de dichos Botones. Dichas Urls estan definidas en el campo "name=" en los path del archivo urls.py_
+   El Base posee la Barra de Navegacion principal, el vinculo con el archivo style.css mencionado antes, la configuracion basica de diseño obtenido en bootswatch, la imagen del icono de la ventana (favicon), varias Clases donde se vincula los Botones de la barra principal (navbar) con las URLs de dichos Botones. Dichas Urls estan definidas en el campo "name=" en los path del archivo urls.py
+   
    Se define aqui que Botones se visualizan estando o no logueados
    Tambien se configura la Herencia con otros archivos HTML para reducir la cantidad de codigo HTML necesario de escribir  en los mismos
+   
    El Index hereda la cofiguracion incicial del archivo Base y posee la configuracion inicial de la pagina principal que aparece cada vez que se abre la App
+   
    Se definen varias Clases cuyos atributos y metodos se utilizan para configurar diferentes partes y contenedores de la App Web como ser:
+   
    El Banner
+   
    Carrousel de las imagenes que estan en la carpeta Static/App/imagenes
+   
    Carrousel de Testimonios y Promociones
+   
    Cards de Formas de pago
+   
    Seccion de Como se usa y FAQ con textos colapsables
+   
    Link de Google Maps con ubicacion
+   
    Seccion de Formulario para Mensajes y Opinion viculado con path en url.py
+   
    Seccion de Pie de pagina (Footer) con datos varios y link con RRSS
        
 
