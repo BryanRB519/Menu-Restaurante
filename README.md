@@ -3,7 +3,7 @@
 Este Proyecto Final realizado por Dalma, Bryan y Walter, es una aplicacion Web para ser utilizada como Menu de Restaurante para hacer pedidos por parte del cliente y usuarios registrados
 Se desarrrollo y programo en Python utilizando Django como Framework. 
 Esta App web tiene diferentes  perfiles como admin, usuario con registro (Login)  y usuario sin Registro
-Consta de Barras de Navegacion, Carrousel de imagenes, carrousel de opiniones y ofertas, Cards de Formas de pago, Cuadro colapsable de Como se usa y FAQ, un mapa de Google para Encuentranos, Formularios para Opiniones, un Pie de Pagina con informaciones y Links varios.
+Consta de Barras de Navegacion, Carrousel de imagenes, carrousel de opiniones y ofertas, Cards de Formas de pago, Cuadro colapsable de Como se usa y FAQ, un mapa de Google para Encuentranos, Formularios para Opiniones que se encuentra conectado con una cuenta de Gmail del Restaurante que envia un mail de confirmacion al cliente que su opinion fue registrada, un Pie de Pagina con informaciones y Links varios.
 La barra de navegacion superior consta de diferentes botones para seleccionar las diferentes opciones del Menu en los cuales se puede hacer CRUD (Create, Read, Update y Delete)
 Tambien gracias a Django se programo con HTML5 Y CSS3 que, combinado con las plantillas de Bootswatch y BooBootstrap nos facilitaron el diseño FrontEnd de este proyecto, para darle un aspecto mas user friendly.
 
@@ -23,7 +23,6 @@ Ir aL boton  “code” > download ZIP Descomprimir el archivo y luego elegir en
 
 Que cosas necesitas para instalar el software y como instalarlas
 
-
 Deberas tener instalado para correr este proyecto:
 
 Visual Studio Code, Python 3.12 o superior, Django 5.1.2, MySQL Workbench 8.0
@@ -37,8 +36,7 @@ Luego se instala Python , descargando de https://www.python.org/,  en la primer 
 
 Se instala MySQL descargandolo de https://www.mysql.com/products/workbench/ siguendo los pasos hasta finalizar la instalacion
 
-
-######Comandos usados en la consola de VS CODE para hacer funcionar el proyecto
+#  Comandos usados en la consola de VS CODE para hacer funcionar el proyecto
 
 _python -m venv entorno (creamos el entorno virtual llamado "entorno")
 
@@ -54,17 +52,19 @@ python manage.py makemigrations (hace los cambios en la base de datos y los mode
 
 python manage.py migrate (Guarda los cambios de los modelos)
 
-python manage.py runserver (activa el sitio web en localhost)
+python manage.py runserver (activa el sitio web en localhost a la direccion http://127.0.0.1:8000/)
 
 Con Ctrl+C se detiene la App
 
 deactivate (desactiva el entorno)_
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+# Estructura de la App ⚙️
 
-## Ejecutando las pruebas ⚙️
+Desde VSC se abre una Carpeta que contiene los Archivos necesarios para correr la App
+Aqui se describen los archivos mas importantes y como funcionan los mismos utilizando la arquitectura MVT (Models, Views, Templates)
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+![image](https://github.com/user-attachments/assets/e7c9d3ec-8c21-43d6-b167-8280bd88130b)
+
 
 ### Analice las pruebas end-to-end 🔩
 
