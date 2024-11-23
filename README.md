@@ -61,9 +61,12 @@ deactivate (desactiva el entorno)_
 # Estructura de la App ⚙️
 
 Desde VSC se abre una Carpeta que contiene los Archivos necesarios para correr la App
+
 Aqui se describen los archivos mas importantes y como funcionan los mismos utilizando la arquitectura MVT (Models, Views, Templates)
+
 Carpeta imagenes
     Donde se encuentran los archivos jpg que se visualizan en la Web
+
 Archivo styles.css donde se programan los efectos visuales de color, estilo, movimiento etc que se ven en las diferentes partes de la Web
 ![image](https://github.com/user-attachments/assets/fd41c1f7-6120-4d73-8557-cb2af5ec5a7b)
 
@@ -71,7 +74,7 @@ Carpeta Templates/App
    Aqui se encuentran los archivos html donde se definen las Clases que representan los Objetos con sus Propiedades, Argumentos e Instancias que componen la App
    Los html mas importantes son el Base y el Index 
 
-   El Base posee la Barra de Navegacion principal, el vinculo con el archivo style.css mencionado antes, la configuracion basica de diseño obtenido en bootswatch, la imagen del icono de la ventana (favicon), varias Clases donde se vincula los Botones de la barra principal (navbar) con las URLs de dichos Botones. Dichas Urls estan definidas en el campo "name=" en los path del archivo urls.py
+   _El Base posee la Barra de Navegacion principal, el vinculo con el archivo style.css mencionado antes, la configuracion basica de diseño obtenido en bootswatch, la imagen del icono de la ventana (favicon), varias Clases donde se vincula los Botones de la barra principal (navbar) con las URLs de dichos Botones. Dichas Urls estan definidas en el campo "name=" en los path del archivo urls.py_
    Se define aqui que Botones se visualizan estando o no logueados
    Tambien se configura la Herencia con otros archivos HTML para reducir la cantidad de codigo HTML necesario de escribir  en los mismos
    El Index hereda la cofiguracion incicial del archivo Base y posee la configuracion inicial de la pagina principal que aparece cada vez que se abre la App
