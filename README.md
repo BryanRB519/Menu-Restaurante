@@ -68,6 +68,7 @@ Carpeta imagenes
     Donde se encuentran los archivos jpg que se visualizan en la Web
 
 Archivo styles.css donde se programan los efectos visuales de color, estilo, movimiento etc que se ven en las diferentes partes de la Web
+
 ![image](https://github.com/user-attachments/assets/fd41c1f7-6120-4d73-8557-cb2af5ec5a7b)
 
 Carpeta Templates/App
