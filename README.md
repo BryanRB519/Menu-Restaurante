@@ -62,8 +62,20 @@ deactivate (desactiva el entorno)_
 
 Desde VSC se abre una Carpeta que contiene los Archivos necesarios para correr la App
 Aqui se describen los archivos mas importantes y como funcionan los mismos utilizando la arquitectura MVT (Models, Views, Templates)
+Carpeta imagenes
+    Donde se encuentran los archivos jpg que se visualizan en la Web
+Archivo styles.css donde se programan los efectos visuales de color, estilo, movimiento etc que se ven en las diferentes partes de la Web
+![image](https://github.com/user-attachments/assets/fd41c1f7-6120-4d73-8557-cb2af5ec5a7b)
 
-![image](https://github.com/user-attachments/assets/e7c9d3ec-8c21-43d6-b167-8280bd88130b)
+Carpeta Templates/App
+   Aqui se encuentran los archivos html donde se definen las Clases que representan los Objetos con sus Propiedades, Argumentos e Instancias que componen la App
+   Los html mas importantes son el Base y el Index 
+
+   El Base
+   El Index posee la configuracion inicial de la pagina principal que aparece cada vez que se abre la App  
+
+![image](https://github.com/user-attachments/assets/71b42346-78fa-4ef0-ba9f-40659f9d2ea0)
+
 
 
 ### Analice las pruebas end-to-end 🔩
