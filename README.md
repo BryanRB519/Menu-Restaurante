@@ -91,6 +91,18 @@ Carpeta Templates/App
 
 ![image](https://github.com/user-attachments/assets/71b42346-78fa-4ef0-ba9f-40659f9d2ea0)
 
+En models.py se crean las Clases que representan las tablas que se cargan en la base de datos MySQL con todos los Objetos y sus atributos (Bebidas,Comidas, Postres, etc)
+Se importan de Django.db los models para conectarlos con la BD
+
+![image](https://github.com/user-attachments/assets/34c41a32-69dc-4de3-ae28-e6f96ab4a25d)
+
+
+En admin.py se conectan los Models con el Administrador de Django
+
+![image](https://github.com/user-attachments/assets/d5195e76-6e5a-477b-862b-772320d74ff3)
+
+
+
 
 El view.html se importan varias funciones y modulos de Django pero principalmente se importan los Models y las funciones render y redirect para que rendericen los HTML y muestren la pagina
 
@@ -98,6 +110,8 @@ Tambien principalmente se definen las funciones "def" (mostrar,crear,buscar,actu
 
 
 ![image](https://github.com/user-attachments/assets/e60901d2-aaf6-495f-93aa-f771d139ae78)
+
+
 
 
 
