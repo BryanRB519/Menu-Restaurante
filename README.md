@@ -77,12 +77,12 @@ Carpeta Templates/App
    Aqui se encuentran los archivos html donde se definen las Clases que representan los Objetos con sus Propiedades, Argumentos e Instancias que componen la App
    Los html mas importantes son el Base y el Index 
 
-   El Base posee la Barra de Navegacion principal, el vinculo con el archivo style.css mencionado antes, la configuracion basica de diseño obtenido en bootswatch, la imagen del icono de la ventana (favicon), varias Clases donde se vincula los Botones de la barra principal (navbar) con las URLs de dichos Botones. Dichas Urls estan definidas en el campo "name=" en los path del archivo urls.py
+   El Base.html posee la Barra de Navegacion principal, el vinculo con el archivo style.css mencionado antes, la configuracion basica de diseño obtenido en bootswatch, la imagen del icono de la ventana (favicon), varias Clases donde se vincula los Botones de la barra principal (navbar) con las URLs de dichos Botones. Dichas Urls estan definidas en el campo "name=" en los path del archivo urls.py
    
    Se define aqui que Botones se visualizan estando o no logueados
    Tambien se configura la Herencia con otros archivos HTML para reducir la cantidad de codigo HTML necesario de escribir  en los mismos
    
-   El Index hereda la cofiguracion incicial del archivo Base y posee la configuracion inicial de la pagina principal que aparece cada vez que se abre la App
+   El Index.html hereda la cofiguracion incicial del archivo Base y posee la configuracion inicial de la pagina principal que aparece cada vez que se abre la App
    
    Se definen varias Clases cuyos atributos y metodos se utilizan para configurar diferentes partes y contenedores de la App Web como ser:
    
@@ -90,6 +90,14 @@ Carpeta Templates/App
        
 
 ![image](https://github.com/user-attachments/assets/71b42346-78fa-4ef0-ba9f-40659f9d2ea0)
+
+
+El view.html se importan varias funciones y modulos de Django pero principalmente se importan los Models y las funciones render y redirect para que rendericen los HTML y muestren la pagina
+
+Tambien principalmente se definen las funciones "def" (mostrar,crear,buscar,actualizar y eliminar) necesarias para el CRUD de todas las "clases" generadas en el archivo models.py y se retornan renderizando a cada archivo html de cada uno de los Objetos
+
+
+![image](https://github.com/user-attachments/assets/e60901d2-aaf6-495f-93aa-f771d139ae78)
 
 
 
