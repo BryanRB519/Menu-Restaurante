@@ -15,7 +15,7 @@ Como Base de Datos se utilizo MySQL debido a que no tiene limites como SQLite y 
 
 Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
-PONER LINK DE GIT CLONE """"""""""""""""
+(https://github.com/BryanRB519/Menu-Restaurante.git)
 
 #  Descarga de instalación ZIP
 
